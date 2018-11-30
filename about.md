@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+This blog is mainly about Java and Spring Framework. 
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+It's all about giving back to the community.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[alanwanga@icloud.com](mailto:alanwanga@icloud.com)
