@@ -14,4 +14,4 @@ It's all about giving back to the community.
 
 [alanwanga@icloud.com](mailto:alanwanga@icloud.com)
 
-![](/images/IMG_1750.JPG | height=100)
+![](/images/IMG_1750.JPG)
