@@ -11,6 +11,16 @@ Given two eggs, find the highest floor an egg can be dropped from without breaki
 
 ---
 
+一顆蛋
+
+無限顆蛋
+
+兩顆蛋
+
+三顆蛋
+
+---
+
 Reference:
 
 [1] https://medium.com/@khopsickle/2-eggs-and-100-floors-a032beb77aaa?fbclid=IwAR0VzwCwm11yOW0SbuRr2weRwqFp-lFNasLZk-EtcuWlKZhjvibUg8D65Gw
