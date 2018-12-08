@@ -33,7 +33,11 @@ title: 2 Egg problem
 
 > x >= 14
 
-
+drop | floor
+-----|------
+foo  | foo
+bar  | bar
+baz  | baz
 
 - 三顆蛋
 
