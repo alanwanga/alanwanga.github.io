@@ -57,7 +57,7 @@ drop | floor
 1. 蛋破了：變成n - 1顆蛋，k - 1層樓。
 2. 蛋沒破：要檢查剩下的k - n層樓，還是n顆蛋。
 
-關鍵是要minimize worst case，看有沒有辦法reduce成我們已知的base case..
+關鍵是要minimize worst case，看怎麼reduce成我們已知的base case，然後注意有沒有重覆計算的部分。
 
 ---
 ref:
