@@ -50,13 +50,16 @@ drop | floor
 
 結論就是不管第一顆蛋在哪層炸開，最差情況都只要試14次。
 
-- 三顆蛋
+- n顆蛋
 
-- 代碼
+推廣一下，假設我們有n顆蛋，k層樓，目前要測試樓層x。
 
-- 分析
+把蛋從x層往下丟會有兩種結果：
+
+1. 蛋破了
+2. 蛋沒破
+
 
 ---
-
 ref:
 <http://www.datagenetics.com/blog/july22012/index.html?fbclid=IwAR1Yfcop3Dm05ogZth9iFaBfVDSBTJjAuvdSaOqNRhulsJfk80eKuhQQWI0>
