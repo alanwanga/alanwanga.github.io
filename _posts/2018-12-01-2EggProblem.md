@@ -35,9 +35,18 @@ title: 2 Egg problem
 
 drop | floor
 -----|------
-foo  | foo
-bar  | bar
-baz  | baz
+1    | 14
+2    | 14 + 13 = 27
+3    | 39
+4    | 
+5    | bar
+6    | baz
+7    | foo
+8    | bar
+9    | baz
+10   | foo
+11   | bar
+12   | baz
 
 - 三顆蛋
 
