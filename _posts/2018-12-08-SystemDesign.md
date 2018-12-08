@@ -11,6 +11,8 @@ title: System Desgin
 1. vertical scaling：超級電腦，一個諸葛亮。
 2. horizontal scaling：電腦叢集，三個臭皮匠。
 
+[如何設計爬蟲系統](https://mp.weixin.qq.com/s/b9biMN_uZSQOM8DnMRieUw")
+
 ---
 
 ref:
