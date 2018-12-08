@@ -15,6 +15,7 @@ title: 2 Egg problem
 
 - 一顆蛋
 
+
 - 無限顆蛋
 
 - 兩顆蛋
