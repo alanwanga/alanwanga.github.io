@@ -23,7 +23,7 @@ title: 2 Egg problem
 
 ---
 
-Reference:
+ref:
 
 [1] https://medium.com/@khopsickle/2-eggs-and-100-floors-a032beb77aaa?fbclid=IwAR0VzwCwm11yOW0SbuRr2weRwqFp-lFNasLZk-EtcuWlKZhjvibUg8D65Gw
 
