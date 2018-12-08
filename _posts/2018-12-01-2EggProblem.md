@@ -28,7 +28,4 @@ title: 2 Egg problem
 ---
 
 ref:
-
-<https://medium.com/@khopsickle/2-eggs-and-100-floors-a032beb77aaa?fbclid=IwAR0VzwCwm11yOW0SbuRr2weRwqFp-lFNasLZk-EtcuWlKZhjvibUg8D65Gw>
-
 <http://www.datagenetics.com/blog/july22012/index.html?fbclid=IwAR1Yfcop3Dm05ogZth9iFaBfVDSBTJjAuvdSaOqNRhulsJfk80eKuhQQWI0>
