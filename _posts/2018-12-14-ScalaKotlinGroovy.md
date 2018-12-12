@@ -9,4 +9,4 @@ Java有一些方言，一樣是在JVM上運行的。
 
 2. Kotlin：看起來有點像Swift，常用於Android開發。
 
-3. Groovy：scripting language，常用於如Jenkins或Gradle的自動化建置及部署腳本。
+3. Groovy：屬於scripting language，常用於如Jenkins或Gradle的自動化建置及部署腳本。
