@@ -11,9 +11,9 @@ title: System Desgin
 1. vertical scaling：超級電腦，一個諸葛亮。
 2. horizontal scaling：電腦叢集，三個臭皮匠。
 
-實務學習上，我們可以思考[如何設計爬蟲系統](https://mp.weixin.qq.com/s/b9biMN_uZSQOM8DnMRieUw)。
+另外，我們可以實際來思考[如何設計爬蟲系統](https://mp.weixin.qq.com/s/b9biMN_uZSQOM8DnMRieUw)。
 
-關於load balancing，業界常用Ngnix，可以參考[另一篇文章](https://alanwanga.github.io/Nginx/)。
+實作load balancing，業界常用Ngnix，可以參考[另一篇文章](https://alanwanga.github.io/Nginx/)。
 
 ---
 
