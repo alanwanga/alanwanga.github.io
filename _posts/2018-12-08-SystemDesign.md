@@ -13,7 +13,7 @@ title: System Desgin
 
 另外，我們可以實際來思考[如何設計爬蟲系統](https://mp.weixin.qq.com/s/b9biMN_uZSQOM8DnMRieUw)。
 
-實作load balancing，業界常用Ngnix，可以參考[另一篇文章](https://alanwanga.github.io/Nginx/)。
+實現load balancing，業界常用Ngnix，是一個輕量server。
 
 ---
 
