@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Comparable and Comparator!!
+title: Comparable and Comparator
 ---
 
 Java提供了兩個幫助排序的接口Comparable和Comparator，兩者之間有什麼區別？
@@ -10,7 +10,6 @@ Comparable接口用於自然排序，而Comparator接口則用於需要對排列
 > 自然排序：從小到大的順序排列數字或按照字母表的順序排列字符。
 
 不接受Comparator對象的排序方法採用自然排序，如int array：
-
 ```
 @Test
 public void sortInts() {
@@ -21,5 +20,6 @@ public void sortInts() {
   assertArrayEquals(expected, numbers);
 }
 ```
-
 因此，若要reverse這種primitive type的array，只能透過逆向for或頭尾swap。
+
+對於Object array，要排序的類型必實現Comparable接口：
