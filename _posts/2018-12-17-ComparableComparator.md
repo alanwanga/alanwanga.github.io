@@ -23,3 +23,15 @@ public void sortInts() {
 因此，若要reverse這種primitive type的array，只能透過逆向for或頭尾swap。
 
 對於Object array，要排序的類型必實現Comparable接口：
+```
+@Test
+public void sortObjects() {
+  String[] strings = {"z", "xy", "x", "abc"};
+  Stirng[] expected = {"abc", "x", "xy", "z"};
+  
+  Arrays.sort(strings);
+  assertArrayEquals(expected, strings);
+}
+```
+由於String類實現了Comparable接口，因此排序結果和期待一樣。若要排序的類型沒有實現Comparable接口，則會拋出ClassCastExecption。
+
