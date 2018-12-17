@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-This blog is mainly about Java and Spring Framework. 
+Here to share what I've learned during my daily work.
 
 ### More Information
 
