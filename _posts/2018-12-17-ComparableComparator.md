@@ -37,5 +37,5 @@ public void sortObjects() {
 
 若要自定義排序方法，可以實現Arrays.sort或是Collections.sort方法所需要的Comparator接口。這個接口有兩個方法，一個是實現財型T比較的int compare(T o1, o2)，另一個是boolean equals(Object o)方法。compare方法返回一個int值，有3種狀態：
 1. 為負，則第一個參數應該排在第二個參數之前。
-2. 為0，則兩個參數相等。
+2. 為零，則兩個參數相等。
 3. 為正，則第二個參數應該排在第一個參數之前。
