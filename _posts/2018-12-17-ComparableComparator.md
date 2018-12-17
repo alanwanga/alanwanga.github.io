@@ -9,6 +9,8 @@ Comparable接口用於自然排序，而Comparator接口則用於需要對排列
 
 > 自然排序：從小到大的順序排列數字或按照字母表的順序排列字符。
 
+不接受Comparator對象的排序方法采用自然排序，如int array：
+
 ```
 @Test
 public void sortInts() {
