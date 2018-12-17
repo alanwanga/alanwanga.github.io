@@ -22,4 +22,4 @@ public void sortInts() {
 }
 ```
 
-因此，若要reverse這種primitive type的array，只能透過倒著for或頭尾swap。
+因此，若要reverse這種primitive type的array，只能透過逆向for或頭尾swap。
