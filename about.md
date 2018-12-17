@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Here to share what I've learned during my daily work.
+Sharing what I find interesting during daily work.
 
 ### More Information
 
