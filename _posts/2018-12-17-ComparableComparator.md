@@ -33,5 +33,5 @@ public void sortObjects() {
   assertArrayEquals(expected, strings);
 }
 ```
-由於String類實現了Comparable接口，因此排序結果和期待一樣。若要排序的類型沒有實現Comparable接口，則會拋出ClassCastExecption。
+由於String類實現了Comparable接口，因此排序結果和期待一樣。若要排序的類型沒有實現Comparable接口，則會拋出ClassCastException。
 
