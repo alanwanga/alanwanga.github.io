@@ -8,3 +8,14 @@ Java提供了兩個幫助排序的接口Comparable和Comparator，兩者之間�
 Comparable接口用於自然排序，而Comparator接口則用於需要對排列的順序進行精淮控制的情形。
 
 > 自然排序：從小到大的順序排列數字或按照字母表的順序排列字符。
+
+```
+@Test
+public void sortInts() {
+  int[] numbers = {-3, -5, 1};
+  int[] expected = {-5, -3, 1};
+  
+  Arrays.sort(numbers);
+  assertArrayEquals(expected, numbers);
+}
+```
