@@ -40,7 +40,7 @@ public void fictionLibraryBook() {
   final LibraryBook.Builder builder = new LibraryBook.Builder();
   final LibraryBook book = builder
     .withBookName("War and Peace")
-    .build()
+    .build();
 }
 ```
 
