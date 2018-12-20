@@ -53,7 +53,7 @@ Strategy Pattern可以理解為在代碼中使用interface，通過對接口編�
 
 3. Template Pattern
 
-Template Pattern的作用是將一個算法的部分步驟搞到一個子類，共同行為可以在超類中定義，具體不同實現可以在子類中定義。
+Template Pattern的作用是將一個算法的部分步驟搞到一個子類，共同行為可以在超類中定義，不同的部分則在子類中定義。
 
 4. Decorator Pattern
 
