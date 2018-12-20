@@ -59,7 +59,10 @@ Template Pattern的作用是將一個算法的部分步驟搞到一個子類，�
 
 ```
 public void decoratorPattern() throws IOEception {
-  final ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(FileOutputStream(new File("target", "out.bin"))));
+  final ObjectOutputStream oos = new ObjectOutputStream(
+                                    new BufferedOutputStream(
+                                      new FileOutputStream(
+                                        new File("target", "out.bin"))));
 }
 ```
 
