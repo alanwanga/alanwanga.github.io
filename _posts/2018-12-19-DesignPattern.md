@@ -71,6 +71,7 @@ public void decoratorPattern() throws IOEception {
   oos.close();
 }
 ```
+Java中用於讀寫JVM之外的IO源的IO類廣泛使用了Decorator Pattern，FileOutputStream將文件寫入磁盤。BufferedOutputStream緩存對write的調用，然後一次性寫入多個字節。在寫入磁盤時，這樣可以獲得巨大的性能提升。ObjectOutputStream是Java內置的serialization機制，用於將對象和原生類型寫入輸出流。
 
 5. Flyweight Pattern
 
