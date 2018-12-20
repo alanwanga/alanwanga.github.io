@@ -6,8 +6,8 @@ title: System Desgin
 System Design裡面最核心的主題之一就是如何確保scalability。
 
 其中又可以分為
-1. vertical scaling：Super Computer，一個諸葛亮。
-2. horizontal scaling：Computer Cluster，三個臭皮匠。
+1. Vertical Scaling：Super Computer，一個諸葛亮。
+2. Horizontal Scaling：Computer Cluster，三個臭皮匠。
 
 另外，我們可以實際來思考[如何設計爬蟲系統](https://mp.weixin.qq.com/s/b9biMN_uZSQOM8DnMRieUw)。
 
