@@ -49,7 +49,7 @@ Builder類屬於LibraryBook的一部份，唯一的職責就是創建對象。�
 
 2. Strategy Pattern
 
-Strategy Pattern就是在代碼中使用interface，通過對接口編程而不是特定的實現編程，可以輕鬆地替換某個算法的具體實現細節，而不需要完全重寫代碼。通過和dependency injection聯合使用可以將測試代碼中的實現替換出去，也可以允許當前的實現替換為測試用模擬實現(e.g. Mockito)。
+Strategy Pattern可以理解為在代碼中使用interface，通過對接口編程而不是特定的實現編程，可以輕鬆地替換某個算法的具體實現細節，而不需要完全重寫代碼。通過和dependency injection聯合使用可以將測試代碼中的實現替換出去，也可以允許當前的實現替換為測試用模擬實現(e.g. Mockito)。
 
 3. Template Pattern
 
