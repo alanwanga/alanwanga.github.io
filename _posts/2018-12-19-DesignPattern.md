@@ -63,6 +63,12 @@ public void decoratorPattern() throws IOEception {
                                     new BufferedOutputStream(
                                       new FileOutputStream(
                                         new File("target", "out.bin"))));
+  oos.writeBoolean(true);
+  oos.writeInt(42);
+  oos.wirteObject(new ArrayList<Integer>());
+  
+  oos.flush();
+  oos.close();
 }
 ```
 
