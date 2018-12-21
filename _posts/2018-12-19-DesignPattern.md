@@ -146,6 +146,7 @@ public class IteratorPatternDemo {
 8. Factory Pattern
 
 > Factory Pattern最主要的精神就是將new class這個動作封裝成一個Factory class，這個class專門負責實體化這些類別。
+
 [這裡](https://blog.amowu.com/2009/08/factory-pattern.html)提到可以用reflection機制，直接依照class名稱來實體化類別，進一步優化代碼。
 
 個人覺得MVC也可以算是一種精典的Design Pattern。
