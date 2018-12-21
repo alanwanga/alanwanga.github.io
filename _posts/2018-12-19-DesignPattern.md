@@ -78,12 +78,13 @@ Java中用於讀寫JVM之外的IO源的IO類廣泛使用了Decorator Pattern，�
 Flyweight Pattern適用於有多個對象，而且其中很多對象表示的都是同一個值的情形。在這些情形下，若這些對象都是immutable，就可以共享這些值。Integer對象是immutable，當要創建Integer對象最好使用valueOf方法，這樣就可以充分利用Flyweight Pattern的好處。若是調用new，那邊總是會創建新的實例。
 
 Null Object Pattern是Flyweight Pattern的另一種實現，像在創建binary tree這樣的數據結構時，可以共享單獨一個空對象。
-
+```
  1
 / \
 2 3
 \ /
 null
+```
 
 6. Singleton Pattern
 
