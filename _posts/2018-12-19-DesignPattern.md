@@ -92,6 +92,44 @@ Singleton Pattern指的是只允許創建一個實例的類，常用於需要向
 
 7. Iterator Pattern
 
+```
+public interface Iterator {
+  public boolean hasNext();
+  public Object next();
+}
+```
+```
+public interface Container {
+  public Iterator getIterator();
+}
+```
+```
+public class NameRepository implements Container {
+  public String names[] = {"Robert" , "John" ,"Julie" , "Lora"};
+  
+  @Override
+  public Iterator getIterator() {
+    return new NameIterator();
+  }
+  
+  private class NameIterator implements Iterator {
+    
+    int index;
+    
+    @Override
+    public boolean hasNext() {
+      if(index < names.length) return true;
+        return false;
+    }
+    
+    @Override
+    public Object next() {
+      if(this.hasNext()) return names[index++];
+        return null;
+    }
+}
+```
+
 8. Factory Pattern
 
 個人覺得MVC也可以算是一種精典的Design Pattern。
