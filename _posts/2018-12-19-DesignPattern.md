@@ -88,6 +88,8 @@ null
 
 6. Singleton Pattern
 
+Singleton Pattern指的是只允許創建一個實例的類，常用於需要向第三方提供單一入口點的場合，例如database和web服務，通過這種方式可以方便地在一個地方管理和配置多個連接。Singleton Pattern最好用在GUI或是已知不會有很多並發用戶的應用程序，若要構建大規模scalable的網絡應用程序，那麼單實例對象通常都是性能瓶頸的根源。
+
 7. Iterator Pattern
 
 8. Factory Pattern
