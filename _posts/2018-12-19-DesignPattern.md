@@ -105,7 +105,7 @@ public interface Container {
 ```
 ```
 public class NameRepository implements Container {
-  public String names[] = {"Robert" , "John" ,"Julie" , "Lora"};
+  public String names[] = {"Robert", "John", "Julie", "Lora"};
   
   @Override
   public Iterator getIterator() {
