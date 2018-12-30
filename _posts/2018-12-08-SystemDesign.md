@@ -1,6 +1,6 @@
 ---
 layout: post
-title: System Desgin
+title: System Design
 ---
 
 System Design裡面最核心的主題之一就是如何確保scalability。
