@@ -9,7 +9,9 @@ System Design裡面最核心的主題之一就是如何確保scalability。
 1. Vertical Scaling：Super Computer，一個諸葛亮。
 2. Horizontal Scaling：Computer Cluster，三個臭皮匠。
 
-另外，我們可以實際來思考[如何設計爬蟲系統](https://mp.weixin.qq.com/s/b9biMN_uZSQOM8DnMRieUw)。
+另外，在架構上要特別小心single point of failure。
+
+我們可以實際來思考[如何設計爬蟲系統](https://mp.weixin.qq.com/s/b9biMN_uZSQOM8DnMRieUw)。
 
 實現load balancing，業界常用Ngnix，是一個輕量server。
 
