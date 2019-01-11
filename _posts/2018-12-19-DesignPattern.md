@@ -37,7 +37,7 @@ title: Design Pattern
       }
     }
     ```
-    ```
+    ```java
     public void fictionLibraryBook() {
       final LibraryBook.Builder builder = new LibraryBook.Builder();
       final LibraryBook book = builder
@@ -57,7 +57,7 @@ title: Design Pattern
 
 4. Decorator Pattern
 
-    ```
+    ```java
     public void decoratorPattern() throws IOException {
       final ObjectOutputStream oos = new ObjectOutputStream(
                                         new BufferedOutputStream(
@@ -92,18 +92,18 @@ title: Design Pattern
 
 7. Iterator Pattern
 
-    ```
+    ```java
     public interface Iterator {
       public boolean hasNext();
       public Object next();
     }
     ```
-    ```
+    ```java
     public interface Container {
       public Iterator getIterator();
     }
     ```
-    ```
+    ```java
     public class NameRepository implements Container {
       public String names[] = {"Robert", "John", "Julie", "Lora"};
 
@@ -129,7 +129,7 @@ title: Design Pattern
         }
     }
     ```
-    ```
+    ```java
     public class IteratorPatternDemo {
 
       public static void main(String[] args) {
