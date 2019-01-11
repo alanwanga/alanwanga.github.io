@@ -10,7 +10,7 @@ Comparable接口用於自然排序，而Comparator接口則用於需要對排列
 > 自然排序：從小到大的順序排列數字或按照字母表的順序排列字符。
 
 不接受Comparator對象的排序方法採用自然排序，如int array：
-```
+```java
 @Test
 public void sortInts() {
   int[] numbers = {-3, -5, 1};
@@ -23,7 +23,7 @@ public void sortInts() {
 因此，若要reverse這種primitive type的array，只能透過逆向for或頭尾swap。
 
 對於Object array，要排序的類型必實現Comparable接口：
-```
+```java
 @Test
 public void sortObjects() {
   String[] strings = {"z", "xy", "x", "abc"};
