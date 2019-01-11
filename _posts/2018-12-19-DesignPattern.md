@@ -7,7 +7,7 @@ title: Design Pattern
 
 1. Builder Pattern
 
-    <code>
+    ```java
     public class LibraryBook {
       public static class Builder {
         private BookType bookType = BookType.FICTION;
@@ -36,7 +36,7 @@ title: Design Pattern
         this.bookName = bookName;
       }
     }
-    </code>
+    ```
     ```
     public void fictionLibraryBook() {
       final LibraryBook.Builder builder = new LibraryBook.Builder();
