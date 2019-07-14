@@ -10,9 +10,7 @@ Sharing what I find interesting during daily work.
 
 It's all about giving back to the community.
 
-<a href="https://www.linkedin.com/in/taoyuanwang/">My Linkedin Profile</a>
-
-<a href="/TaoyuanWang_resume.pdf">My Resume</a> (Last Updated on July 14, 2019)
+<a href="https://www.linkedin.com/in/taoyuanwang/">Linkedin</a> and <a href="/TaoyuanWang_resume.pdf">Resume</a> (Last Updated on July 14, 2019)
 
 ### Contact me
 
