@@ -14,7 +14,7 @@ I recieved my Bachelor and Master degree in Computer Science from Tsinghua Unive
 
 My research interests focus on natural language processing, particularly in dialogue system. My personal interests include language learning, traveling, and any kinds of sports.
 
-I'll describe myself as a optimistic, active participant, and conscientious worker with strong learning competence and business sense.
+I'll describe myself as a optimistic, active participant, and conscientious programmer with strong learning competence and business sense.
 
 <a href="https://www.linkedin.com/in/taoyuanwang/">Linkedin</a> and <a href="/TaoyuanWang_resume.pdf">Resume</a> (Last Updated on July 14, 2019)
 
