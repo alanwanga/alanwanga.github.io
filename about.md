@@ -4,11 +4,11 @@ title: About
 permalink: /about/
 ---
 
-Sharing what I find interesting during daily work.
+Sharing what I find interesting during daily work. It's all about giving back to the community.
 
 ### More Information
 
-It's all about giving back to the community.
+My name is Taoyuan Wang, or you can just call me Alan. I'm now a software engineer in Appen China startup team. I recieved my Bachelor and Master degree in Computer Science from Tsinghua University Taiwan. Then, I joined Academia Sinica Taipei as full-time research assistant and Works Applications Shanghai as full-stack developer. My research interests focus on natural language processing, particularly in dialogue system. My personal interests include language learning, traveling, and any kinds of sports. I'll describe myself as a optimistic, active participant, conscientious worker, with strong learning competence and business sense.
 
 <a href="https://www.linkedin.com/in/taoyuanwang/">Linkedin</a> and <a href="/TaoyuanWang_resume.pdf">Resume</a> (Last Updated on July 14, 2019)
 
