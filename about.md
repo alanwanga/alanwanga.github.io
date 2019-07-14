@@ -16,4 +16,4 @@ It's all about giving back to the community.
 
 [alanwanga@icloud.com](mailto:alanwanga@icloud.com)
 
-<img src="/images/IMG_1750.JPG" height="200" />
+<img src="/images/wechatqrcode.JPG" height="200" />
