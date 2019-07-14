@@ -10,7 +10,7 @@ Sharing what I find interesting during daily work.
 
 It's all about giving back to the community.
 
-<a href="/TaoyuanWang_resume.pdf" Resume />
+<a href="/TaoyuanWang_resume.pdf">Resume</a>
 
 ### Contact me
 
