@@ -12,7 +12,7 @@ My name is Taoyuan Wang, or you can just call me Alan. I'm currently a software 
 
 I recieved my Bachelor and Master degree in Computer Science from Tsinghua University Taiwan. Then, I joined Academia Sinica Taipei as full-time research assistant and Works Applications Shanghai as full-stack developer.
 
-My research interests focus on natural language processing, particularly in dialogue system. My personal interests include language learning, traveling, and any kinds of sports.
+My research interests focus on natural language processing, particularly in dialogue system. My personal interests include language learning, traveling, and all kinds of sports.
 
 I'll describe myself as a optimistic, active participant, and conscientious programmer with strong learning competence and business sense.
 
