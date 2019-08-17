@@ -9,7 +9,7 @@ Sharing what I find interesting during daily work. It's all about giving back to
 ### More Information
 My name is Taoyuan Wang, or you can just call me Alan. I’m currently a software engineer in Appen China startup team.
 
-We develop crowdsourcing platform to provide data collection and annotation services to global companies that are transforming their businesses with machine learning. I'm working on an AI-assisted 3D point cloud labeling platform for self-driving car, drones, robotics, AR and VR applications.
+We develop crowdsourcing platform to provide data collection and annotation services to global companies that are transforming their businesses with machine learning. I'm working on an AI-assisted 3D point cloud labeling platform for self-driving cars, drones, robotics, AR and VR applications.
 
 I received my bachelor’s and master’s degree in computer science from Tsinghua University Taiwan. Then, I joined Academia Sinica Taipei as full-time research assistant and Works Applications Shanghai as full-stack developer.
 
