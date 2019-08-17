@@ -11,11 +11,9 @@ My name is Taoyuan Wang, or you can just call me Alan. I’m currently a softwar
 
 We develop crowdsourcing platform to provide data collection and annotation services to global companies that are transforming their businesses with machine learning. I'm working on an AI-assisted 3D point cloud labeling platform for self-driving cars, drones, robotics, AR and VR applications.
 
-I received my bachelor’s and master’s degree in computer science from Tsinghua University Taiwan. Then, I joined Academia Sinica Taipei as full-time research assistant and Works Applications Shanghai as full-stack developer.
+I received my bachelor’s and master’s degree in computer science from Tsinghua University Taiwan. Then, I joined Academia Sinica Taipei as full-time research assistant and Works Applications Shanghai as full-stack developer before Appen.
 
 My research interests focus on natural language processing, particularly in dialogue system. My personal interests include language learning, traveling, and all kinds of sports.
-
-I'll describe myself as an optimistic, active participant, and conscientious programmer with strong learning competence and business sense.
 
 <a href="https://www.linkedin.com/in/taoyuanwang/">Linkedin</a> and <a href="/TaoyuanWang_resume.pdf">Resume</a> (Last Updated on July 14, 2019)
 
