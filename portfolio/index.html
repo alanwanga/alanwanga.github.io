@@ -1,134 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work Portfolio</title>
-  <style>
-    body {
-      background-color: #121212;
-      color: #e0e0e0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
-      padding: 3em;
-      max-width: 900px;
-      margin: auto;
-      font-size: 1rem;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-gray-200 font-sans leading-relaxed px-4 sm:px-6 lg:px-12 max-w-5xl mx-auto text-base">
+    <header class="flex flex-col sm:flex-row items-start sm:items-center gap-4 my-8">
+      <img src="https://avatars0.githubusercontent.com/u/3997703?s=200" alt="Taoyuan Wang" class="rounded-full w-16 h-16 sm:w-20 sm:h-20" />
+      <div>
+        <h1 class="text-3xl font-bold">Work Portfolio</h1>
+        <p class="text-gray-400 text-sm sm:text-base ml-1">taoyuanw@google.com</p>
+      </div>
+    </header>
 
-    h1, h2, h3 {
-      color: #ffffff;
-      margin-top: 2em;
-    }
+    <main>
+      <section>
+        <h2 class="text-white text-2xl font-semibold mt-10 mb-4">Professional Overview</h2>
+        <p class="my-4">My name is Taoyuan Wang. I have 7+ years of industry experience in software development, specializing in autonomous systems. I hold both Master's and Bachelor's degrees in Computer Science.</p>
+        <p class="my-4">Currently, I am a backend engineer on the Uncrewed Traffic Management (UTM) team at Wing, an Alphabet moonshot project initiated by Google X Development. I am working on a new variation of Google Maps in 3D airspace for autonomous aircrafts.</p>
+        <p class="my-4">I have been granted Google C++ readability and received a National Interest Waiver (NIW) in recognition of my contributions to Highly Automated, Autonomous, and Uncrewed Systems (UxS) and Robotics.</p>
+        <p class="my-4">Previously, I was a full-stack developer on the Computer Vision Tools team at Appen, where I led the design and development of 3D point cloud annotation tools for autonomous vehicles and robots.</p>
+      </section>
 
-    a {
-      color: #82b1ff;
-      text-decoration: underline;
-    }
+      <section>
+        <h2 class="text-white text-2xl font-semibold mt-10 mb-4">Selected Projects</h2>
 
-    a:hover {
-      color: #bb86fc;
-    }
+        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
+          <h3 class="text-lg font-semibold text-white">Wing OpenSky Operator Interfaces</h3>
+          <p class="my-2">These interfaces enable operators to oversee multiple aircrafts safely. Integrated with Google Maps and internal data sources, the systems provide real-time tracking, flight path visualization, and regulatory compliance.</p>
+          <p class="my-2">I implemented backend handlers and validators to ensure operational safety, translating product requirements into robust code that increased operator capacity.</p>
+        </div>
 
-    p {
-      margin: 1em 0;
-    }
+        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
+          <h3 class="text-lg font-semibold text-white">Wing Operational Configuration Systems</h3>
+          <p class="my-2">Built on Alphabet’s server config push infrastructure, these systems automate compliance rules across geographies and enable low-latency enforcement (e.g. emergency landing permissions).</p>
+          <p class="my-2">I led schema design and validation logic, integrating with multiple components to support scalable autonomous drone deployment.</p>
+        </div>
 
-    .title {
-      font-size: 2.5em;
-      font-weight: bold;
-      margin-bottom: 0.25em;
-    }
+        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
+          <h3 class="text-lg font-semibold text-white">Appen AI-Assisted 3D Point Cloud Annotation Tools</h3>
+          <p class="my-2">Tools for annotating LiDAR/radar data to enhance ML model training. Features include semantic segmentation and real-time clustering-based annotations.</p>
+          <p class="my-2">I led full-stack development from prototype to production, implementing clustering via DBSCAN to accelerate annotation by 35%.</p>
+        </div>
 
-    .subtitle {
-      font-size: 1.2em;
-      color: #bbbbbb;
-      margin-bottom: 2em;
-    }
+        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
+          <h3 class="text-lg font-semibold text-white">Appen Sensor Fusion Experiments</h3>
+          <p class="my-2">These experiments integrated LiDAR, radar, and camera feeds for enhanced multimodal annotation and object detection.</p>
+          <p class="my-2">I developed sensor fusion pipelines and visualization tools, aligning coordinate systems and enabling real-time projections for annotators.</p>
+        </div>
+      </section>
 
-    .project-title {
-      font-weight: bold;
-      color: #ffffff;
-      font-size: 1.1em;
-      margin-top: 1.5em;
-    }
+      <section>
+        <h2 class="text-white text-2xl font-semibold mt-10 mb-4">Key Achievements</h2>
 
-    @media (max-width: 600px) {
-      body {
-        padding: 1.5em;
-        font-size: 0.95rem;
-      }
+        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
+          <h3 class="text-lg font-semibold text-white">Wing</h3>
+          <p class="my-2">Developed Google Maps-based operator interfaces and configuration systems for OpenSky. Allowed one operator to manage multiple drones, resolving a major scaling bottleneck. Ensured compliance with FAA, CASA, and other regulators.</p>
+          <p class="my-2">
+            <a href="https://wing.com/opensky" target="_blank" class="text-blue-400 hover:text-purple-300 underline">OpenSky - Our Drone Airspace Platform</a>
+            <iframe class="w-full h-64 rounded-md mt-2" src="https://wing.com/opensky"></iframe>
+          </p>
+          <p class="my-2">
+            <a href="https://opensky.wing.com/visitor/map?lat=-28.418053&lng=133.454211&zoom=4" target="_blank" class="text-blue-400 hover:text-purple-300 underline">OpenSky - Online Preview</a>
+            <iframe class="w-full h-64 rounded-md mt-2" src="https://opensky.wing.com/visitor/map?lat=-28.418053&lng=133.454211&zoom=4"></iframe>
+          </p>
+        </div>
 
-      .title {
-        font-size: 2em;
-      }
+        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
+          <h3 class="text-lg font-semibold text-white">Appen</h3>
+          <p class="my-2">Led the design and implemation of 3D point cloud tools to reduce annotation cost through AI-assisted workflows, improving productivity and data quality for autonomous systems.</p>
+          <p class="my-2">
+            <a href="https://www.youtube.com/watch?v=gDQWW3u_2AI" target="_blank" class="text-blue-400 hover:text-purple-300 underline">Tech Day Demo - LiDAR Annotation</a>
+            <iframe class="w-full h-64 rounded-md mt-2" src="https://www.youtube.com/embed/gDQWW3u_2AI?si=3aUpdLVPnmq6ril5"></iframe>
+          </p>
+          <p class="my-2">
+            <a href="https://www.youtube.com/watch?v=LFIJ32s54aY" target="_blank" class="text-blue-400 hover:text-purple-300 underline">Tech Day Demo - LiDAR Lane Line Segmentation</a>
+            <iframe class="w-full h-64 rounded-md mt-2" src="https://www.youtube.com/embed/LFIJ32s54aY?si=i3zB2CtwN7AtoU2X"></iframe>
+          </p>
+        </div>
+      </section>
 
-      .subtitle {
-        font-size: 1em;
-      }
-
-      .project-title {
-        font-size: 1em;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="title">Work Portfolio</div>
-  <div class="subtitle">taoyuanw@google.com</div>
-  
-  <img src="https://avatars0.githubusercontent.com/u/3997703?s=200" alt="TaoyuanWang">
-
-  <h1>Professional Overview</h1>
-  <p>My name is Taoyuan Wang. I have 7+ years of industry experience in software development, specializing in autonomous systems. I hold both Master's and Bachelor's degrees in Computer Science.</p>
-  <p>Currently, I am a backend engineer on the Uncrewed Traffic Management (UTM) team at Wing, an Alphabet moonshot project initiated by Google X Development. I am working on a new variation of Google Maps in 3D airspace for autonomous aircrafts.</p>
-  <p>I have been granted Google C++ readability and received a National Interest Waiver (NIW) in recognition of my contributions to Highly Automated, Autonomous, and Uncrewed Systems (UxS) and Robotics.</p>
-  <p>Previously, I was a full-stack developer on the Computer Vision Tools team at Appen, where I led the design and development of 3D point cloud annotation tools for autonomous vehicles and robots.</p>
-
-  <h1>Selected Projects</h1>
-
-  <div class="project-title">Wing OpenSky Operator Interfaces</div>
-  <p>These interfaces enable operators to oversee multiple aircraft safely. Integrated with Google Maps and internal data sources, the systems provide real-time tracking, flight path visualization, and regulatory compliance.</p>
-  <p>I implemented backend handlers and validators to ensure operational safety, translating product requirements into robust code that increased operator capacity.</p>
-
-  <div class="project-title">Wing Operational Configuration Systems</div>
-  <p>Built on Alphabet’s server config push infrastructure, these systems automate compliance rules across geographies and enable low-latency enforcement (e.g. emergency landing permissions).</p>
-  <p>I led schema design and validation logic, integrating with multiple components to support scalable autonomous drone deployment.</p>
-
-  <div class="project-title">Appen AI-Assisted 3D Point Cloud Annotation Tools</div>
-  <p>Tools for annotating LiDAR/radar data to enhance ML model training. Features include semantic segmentation and real-time clustering-based annotations.</p>
-  <p>I led full-stack development from prototype to production, implementing clustering via DBSCAN to accelerate annotation by 35%.</p>
-
-  <div class="project-title">Appen Sensor Fusion Experiments</div>
-  <p>These experiments integrated LiDAR, radar, and camera feeds for enhanced multimodal annotation and object detection.</p>
-  <p>I developed sensor fusion pipelines and visualization tools, aligning coordinate systems and enabling real-time projections for annotators.</p>
-
-  <h1>Key Achievements</h1>
-
-  <div class="project-title">Wing</div>
-  <p>Developed Google Maps-based operator interfaces and configuration systems for OpenSky [1][2]. Allowed one operator to manage multiple drones, resolving a major scaling bottleneck. Ensured compliance with FAA, CASA, and others.</p>
-  <p>
-    [1] <a href="https://wing.com/opensky" target="_blank">OpenSky - Our Drone Airspace Platform</a><br>
-
-    <iframe width="560" height="315" src="https://wing.com/opensky"></iframe><br>
-
-    [2] <a href="https://opensky.wing.com/visitor/map?lat=-28.418053&lng=133.454211&zoom=4" target="_blank">OpenSky - Online Preview</a><br>
-
-     <iframe width="560" height="315" src="https://opensky.wing.com/visitor/map?lat=-28.418053&lng=133.454211&zoom=4"></iframe><br>
-  </p>
-
-  <div class="project-title">Appen</div>
-  <p>Led Appen's 3D point cloud tools [1][2] to reduce annotation cost through AI-assisted workflows, improving productivity and data quality for autonomous systems.</p>
-  <p>
-    [1] <a href="https://www.youtube.com/watch?v=gDQWW3u_2AI" target="_blank">Tech Day Demo - LiDAR Annotation</a><br>
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/gDQWW3u_2AI?si=3aUpdLVPnmq6ril5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-
-    [2] <a href="https://www.youtube.com/watch?v=LFIJ32s54aY" target="_blank">Tech Day Demo - LiDAR Lane Line Segmentation</a><br>
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/LFIJ32s54aY?si=i3zB2CtwN7AtoU2X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-    </p>
-
-  <div class="project-title">Thanks for reading to the end. Let's talk!</div>
-</body>
+      <footer class="mt-16 text-sm text-center">
+        <a href="https://alanwanga.github.io/TaoyuanWang_resume.pdf" target="_blank" class="text-blue-400 hover:text-purple-400 underline">View Resume</a> — please find my contact info inside.<br>
+        I’d be more than happy to hear from you!
+      </footer>
+    </main>
+  </body>
 </html>
