@@ -3,109 +3,227 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Work Portfolio</title>
+    <title>Taoyuan Wang | Autonomous Systems &amp; Robotics Engineer</title>
+    <meta name="description" content="Taoyuan Wang is a software engineer specializing in autonomous systems, robotics, distributed systems, geospatial infrastructure, and AI-powered multi-robot coordination." />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-900 text-gray-200 font-sans leading-relaxed px-4 sm:px-6 lg:px-12 max-w-5xl mx-auto text-base">
-    <header class="flex flex-col sm:flex-row items-start sm:items-center gap-4 my-8">
-      <img src="https://avatars0.githubusercontent.com/u/3997703?s=200" alt="Taoyuan Wang" class="rounded-full w-16 h-16 sm:w-20 sm:h-20" />
-      <div>
-        <h1 class="text-3xl font-bold">Work Portfolio</h1>
-        <p class="text-gray-400 text-sm sm:text-base ml-1">taoyuanw@google.com</p>
+    <header class="my-10">
+      <div class="flex items-center gap-4">
+        <img src="https://avatars0.githubusercontent.com/u/3997703?s=200" alt="Taoyuan Wang" class="rounded-full w-16 h-16 sm:w-20 sm:h-20" />
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Taoyuan Wang</h1>
+          <p class="text-gray-300 font-medium mt-1">Autonomous Systems &amp; Robotics Software Engineer</p>
+        </div>
+      </div>
+      <p class="text-gray-400 text-sm mt-4">Safety-critical distributed systems &middot; Geospatial infrastructure &middot; AI-powered robotics</p>
+      <p class="text-gray-400 mt-2 max-w-2xl">Building production systems for autonomous aircraft, 3D perception tooling, and AI-powered robotics.</p>
+      <div class="flex flex-wrap gap-3 mt-5">
+        <a href="https://alanwanga.github.io/TaoyuanWang_resume.pdf" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 transition text-white text-sm font-semibold px-5 py-2.5 rounded-lg">Resume</a>
+        <a href="https://www.linkedin.com/in/taoyuanwang" target="_blank" rel="noopener noreferrer" class="border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition text-gray-200 text-sm font-medium px-5 py-2.5 rounded-lg">LinkedIn</a>
       </div>
     </header>
 
     <main>
       <section>
         <h2 class="text-white text-2xl font-semibold mt-10 mb-4">Professional Overview</h2>
-        <p class="my-4">My name is Taoyuan Wang. I have 7+ years of industry experience in software development, specializing in autonomous systems. I hold both Master's and Bachelor's degrees in Computer Science.</p>
-        <p class="my-4">Currently, I’m a backend engineer at Wing, an Alphabet moonshot from Google X. I work on the Uncrewed Traffic Management (UTM) team, where we are building Google Maps for the sky to help autonomous aircraft safely navigate. Our system determines when and where drones can fly, enabling a reliable and scalable delivery network.</p>
-        <p class="my-4">I have been granted Google C++ readability and received a National Interest Waiver (NIW) in recognition of my contributions to Highly Automated, Autonomous, and Uncrewed Systems (UxS) and Robotics. My work focuses on building and optimizing the infrastructures that power autonomous systems.</p>
-        <p class="my-4">Previously, I was a full-stack developer at Appen, where I led the design and development of 3D point cloud annotation tools for autonomous vehicles. My work supported 3D visualization and multi-sensor fusion across lidar, radar, and camera data to produce large-scale, high-quality training datasets for machine learning.</p>
+        <p class="my-4">Software engineer with 8+ years of experience building infrastructure for autonomous systems, robotics, and computer vision. I hold both Master&apos;s and Bachelor&apos;s degrees in Computer Science. Currently at Wing (Alphabet), working on safety-critical airspace and operational systems for autonomous drone delivery.</p>
+        <p class="my-4">Previously led development of 3D point-cloud annotation systems adopted by 20+ autonomous-vehicle and robotics customers.</p>
+      </section>
+
+      <section>
+        <h2 class="text-white text-2xl font-semibold mt-10 mb-4">Impact at a Glance</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 my-6">
+          <div class="bg-gray-800 rounded-lg p-5 shadow-md">
+            <p class="text-3xl font-extrabold text-white">10&times;</p>
+            <p class="text-sm font-semibold text-gray-300 mt-1">Operator capacity</p>
+            <p class="text-xs text-gray-500 mt-1">16 &rarr; 160 drones</p>
+          </div>
+          <div class="bg-gray-800 rounded-lg p-5 shadow-md">
+            <p class="text-3xl font-extrabold text-white">99.99%</p>
+            <p class="text-sm font-semibold text-gray-300 mt-1">Platform stability</p>
+            <p class="text-xs text-gray-500 mt-1">while operating as sole backend engineer</p>
+          </div>
+          <div class="bg-gray-800 rounded-lg p-5 shadow-md">
+            <p class="text-3xl font-extrabold text-white">20+</p>
+            <p class="text-sm font-semibold text-gray-300 mt-1">AV / robotics customers</p>
+            <p class="text-xs text-gray-500 mt-1">on 3D annotation platform</p>
+          </div>
+          <div class="bg-gray-800 rounded-lg p-5 shadow-md">
+            <p class="text-3xl font-extrabold text-white">56%</p>
+            <p class="text-sm font-semibold text-gray-300 mt-1">Lower labeling cost</p>
+            <p class="text-xs text-gray-500 mt-1">through workflow analytics</p>
+          </div>
+        </div>
       </section>
 
       <section>
         <h2 class="text-white text-2xl font-semibold mt-10 mb-4">Selected Projects</h2>
 
-        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
-          <h3 class="text-lg font-semibold text-white">Wing Robot Coordinator <span class="text-sm font-normal text-gray-400">(Powered by Gemini)</span></h3>
-          <p class="my-2">A centralized LLM/VLA coordination system that allows users to control multiple drones using natural language, enabling them to perform general-purpose tasks without needing pre-programmed instructions. The system fuses real-time drone sensor data with object detection and tracking to build a rich, shared understanding of the environment. Natural language inputs are processed to contextualize human intent, which is then translated into executable drone tasks. An integrated 3D visualization and simulation interface supports intuitive human-AI-robot interaction, making it easier to test, monitor, and guide multi-agent behavior.</p>
-          <p class="my-2">To accelerate development and testing, the system can also generate custom 3D environments from simple text descriptions, significantly reducing the engineering effort for scenario creation. All interactions, including user commands, AI reasoning, drone actions, and human feedback, are logged to build a comprehensive dataset for reinforcement learning, enabling continuous performance improvement. Designed for real-world deployment, the coordinator can interface with physical drones through low-latency control models, paving the way for advanced applications in autonomous delivery, disaster response, and multi-robot collaboration.</p>
-          <p class="my-2">
-            <a href="https://www.youtube.com/watch?v=Z8eXKve0Vs8" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-purple-300 underline">Demo - Gemini for robotics and embodied intelligence</a>
-            <iframe class="w-full h-[32rem] rounded-md mt-2" src="https://www.youtube.com/embed/Z8eXKve0Vs8?si=AXKCfBPQ6bgav2tJ" allowfullscreen></iframe>
-          </p>
+        <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 mb-2">01</p>
+          <div class="flex items-center gap-3 flex-wrap">
+            <h3 class="text-xl font-bold text-white">Autonomous Aviation Infrastructure</h3>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Wing</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">C++</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Distributed Systems</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Geospatial</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Safety-Critical Systems</span>
+          </div>
+          <p class="my-3 text-gray-300">Backend for Wing&rsquo;s operator-facing aviation platform &mdash; the &ldquo;Google Maps for the sky&rdquo; that governs when and where autonomous aircraft may fly.</p>
+          <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
+          <p class="text-gray-300">Drone delivery must enforce spatial, temporal, and regulatory constraints in real time, across multiple operating regions.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">My Role</h4>
+          <p class="text-gray-300">Built the backend for OpenSky &mdash; handlers, validators, testing, data migration &mdash; coordinating frontend and backend work across teams.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Technical Work</h4>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li>Translated FAA and international regulatory rules into backend enforcement code.</li>
+            <li>Built handlers and validators for 4D (3D + time) airspace restriction enforcement.</li>
+            <li>Integrated real-time aircraft tracking, flight-path visualization, and compliance monitoring with Google Maps and internal data sources.</li>
+            <li>Added an intelligent layer turning live telemetry into operational guidance (emergency landing, temporary restrictions), plus an AI copilot for on-call incident triage.</li>
+          </ul>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Impact</h4>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li><strong class="text-white">16 &rarr; 160 drones per operator</strong>; lower labor costs; FAA and CASA approvals unlocked in new cities.</li>
+            <li><strong class="text-white">99.99% platform stability</strong> as sole backend engineer while shipping roadmap features.</li>
+            <li>Blackbox monitoring with failure injection for emergency-landing commands (sub-second alerts), adopted by other safety-critical teams at Wing.</li>
+          </ul>
+          <a href="https://wing.com/opensky" target="_blank" rel="noopener noreferrer" class="block mt-6 rounded-md bg-gray-700 hover:bg-gray-600 transition p-6 text-center group">
+            <span class="block text-white font-medium">OpenSky &mdash; Our Drone Airspace Platform</span>
+            <span class="block text-sm text-gray-400 mt-1">wing.com/opensky &mdash; opens in a new tab &#8599;</span>
+          </a>
+          <a href="https://x.company/projects/wing/" target="_blank" rel="noopener noreferrer" class="block mt-6 rounded-md bg-gray-700 hover:bg-gray-600 transition p-4 text-center group">
+            <img src="./wing-sketch.png" alt="A sketch of an early Wing prototype" loading="lazy" class="w-full max-w-md mx-auto rounded-lg group-hover:opacity-90 transition" />
+            <span class="block text-white font-medium mt-3">Wing &mdash; A Google X Moonshot</span>
+            <span class="block text-sm text-gray-400 mt-1">x.company/projects/wing &mdash; opens in a new tab &#8599;</span>
+          </a>
         </div>
 
-        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
-          <h3 class="text-lg font-semibold text-white">Wing OpenSky Operator Interfaces</h3>
-          <p class="my-2">The interfaces enable operators to oversee and control multiple aircraft safely and efficiently. Integrated with Google Maps and internal data sources, the systems provide real-time aircraft location tracking, flight path visualization, and compliance monitoring in accordance with FAA and other international regulatory guidelines. The systems enable timely four-dimensional (3D plus time) airspace restriction enforcement, ensuring adherence to safety protocols.</p>
-          <p class="my-2">I developed the backend components for OpenSky, working closely with product managers to translate requirements into design docs. I implemented the backend handlers and validators to ensure compliance with regulatory standards and operational safety. Additionally, I coordinated planning, task allocation, and testing efforts, contributing to robust UTM systems that significantly increased operator capacity and supported the scaling of autonomous delivery services.</p>
-          <p class="my-2">
-            <a href="https://wing.com/opensky" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-purple-300 underline">OpenSky - Our Drone Airspace Platform</a>
-            <iframe class="w-full h-[32rem] rounded-md mt-2" src="https://wing.com/opensky"></iframe>
-          </p>
+        <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 mb-2">02</p>
+          <div class="flex items-center gap-3 flex-wrap">
+            <h3 class="text-xl font-bold text-white">AI Multi-Drone Coordination</h3>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Wing</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">LLM / VLA</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Robotics</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Multi-Agent Systems</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Simulation</span>
+          </div>
+          <p class="my-3 text-gray-300">Natural-language control of multiple drones &mdash; intent in, executable multi-drone tasks out.</p>
+          <div class="aspect-video w-full rounded-md mt-4 overflow-hidden">
+            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/Z8eXKve0Vs8" title="Demo - Gemini for robotics and embodied intelligence" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
+          <p class="text-gray-300">Operating several drones still required pre-programmed instructions per task; general-purpose missions needed a more flexible interface.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">My Role</h4>
+          <p class="text-gray-300">Led a proof-of-concept agentic coordination system with iterative planning review, human-in-the-loop escalation, and safety validation.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Technical Work</h4>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li>LLM/VLA planning translates natural-language intent into executable drone tasks.</li>
+            <li>Fuses real-time sensor data with object detection and tracking into a shared environment model.</li>
+            <li>Integrated 3D visualization and simulation; text descriptions generate custom 3D test environments.</li>
+            <li>Logs commands, reasoning, actions, and feedback into a reinforcement-learning dataset for continuous improvement.</li>
+          </ul>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Impact</h4>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li>General-purpose multi-drone tasks without pre-programmed instructions.</li>
+            <li>Low-latency control-model interface designed for real-drone deployment.</li>
+          </ul>
         </div>
 
-        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
-          <h3 class="text-lg font-semibold text-white">Wing Operational Configuration Systems</h3>
-          <p class="my-2">The systems, built on Alphabet’s dynamic server configuration push infrastructures, empower Solution Managers to manage compliance-related flight rules for multinational operations. The systems enable automated enforcement of geographical flight restrictions, ensure that operators hold up-to-date certifications, and also replace our previous authentication modules based on Google Zanzibar and Baggins with role-based configurations and permission checking optimized for low-latency applications, such as pilot-issued emergency landing commands.</p>
-          <p class="my-2">I led the design and implementation of configuration schemas and validation mechanisms, preventing user errors while ensuring semantic correctness. Additionally, I integrated the systems as a module across multiple components to support rapid, reliable deployment of configuration updates. This work significantly enhanced the compliance, scalability, and operational efficiency of autonomous drone operations.</p>
+        <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 mb-2">03</p>
+          <div class="flex items-center gap-3 flex-wrap">
+            <h3 class="text-xl font-bold text-white">Safety-Critical Configuration &amp; Authorization</h3>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Wing</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Authorization</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">RBAC</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Distributed Configuration</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Migration</span>
+          </div>
+          <p class="my-3 text-gray-300">Re-architected a legacy authorization/configuration system into independently managed domains &mdash; with zero downtime and full backward compatibility.</p>
+          <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
+          <p class="text-gray-300">The legacy auth module, built on Google Zanzibar and Baggins, was complex and failure-prone due to synchronization dependencies; it had to be modernized without interrupting safety-critical operations.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">My Role</h4>
+          <p class="text-gray-300">Led the design and implementation of configuration schemas and validation mechanisms.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Technical Work</h4>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li>Decomposed the monolith into three services: Organization, User, and Member License Management.</li>
+            <li>Centralized permissions into configuration with schema validation that prevents user error.</li>
+            <li>Role-based permission checks optimized for low-latency paths (e.g., pilot-issued emergency landing).</li>
+          </ul>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Impact</h4>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li><strong class="text-white">Zero-downtime migration</strong>; synchronization failures eliminated.</li>
+            <li>Operational effort cut from hours to minutes; lower authorization latency.</li>
+          </ul>
         </div>
 
-        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
-          <h3 class="text-lg font-semibold text-white">Appen AI-Assisted 3D Point Cloud Annotation Tools</h3>
-          <p class="my-2">The tools enhance the perception capabilities of autonomous systems by allowing precise labeling of 3D point cloud data from LiDAR and radar sensors. Features like semantic segmentation enable annotators to classify individual points, improving training data quality for ML models.</p>
-          <p class="my-2">I led the full-stack development of these tools from prototype to production, integrating real-time AI-assisted annotation via point cloud clustering. This approach significantly improved efficiency and accuracy, reducing annotation time and costs for autonomous vehicle and robotics perception models.</p>
-          <p class="my-2">
-            <a href="https://www.youtube.com/watch?v=gDQWW3u_2AI" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-purple-300 underline">Tech Day Demo - LiDAR Annotation</a>
-            <iframe class="w-full h-64 rounded-md mt-2" src="https://www.youtube.com/embed/gDQWW3u_2AI?si=3aUpdLVPnmq6ril5" allowfullscreen></iframe>
-          </p>
-          <p class="my-2">
-            <a href="https://www.youtube.com/watch?v=LFIJ32s54aY" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-purple-300 underline">Tech Day Demo - LiDAR Lane Line Segmentation</a>
-            <iframe class="w-full h-64 rounded-md mt-2" src="https://www.youtube.com/embed/LFIJ32s54aY?si=i3zB2CtwN7AtoU2X" allowfullscreen></iframe>
-          </p>
-        </div>
-
-        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
-          <h3 class="text-lg font-semibold text-white">Appen Sensor Fusion Experiments</h3>
-          <p class="my-2">Sensor fusion integrates data from LiDAR, radar, and cameras to enhance multimodal annotation, object detection, and tracking, which are crucial for self-driving cars and unmanned aircraft.</p>
-          <p class="my-2">I identified various camera models used in autonomous systems, developed sensor fusion and visualization scripts, and ensured compatibility between client coordinate systems and our fusion algorithms. My work enabled real-time projection of 3D points into the 2D domain, enhancing annotation accuracy and facilitating better environmental understanding for annotators.</p>
+        <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 mb-2">04</p>
+          <div class="flex items-center gap-3 flex-wrap">
+            <h3 class="text-xl font-bold text-white">3D Perception &amp; Annotation Platform</h3>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Appen</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">LiDAR</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Three.js</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">WebGL</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Spatial Algorithms</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Computer Vision</span>
+          </div>
+          <p class="my-3 text-gray-300">Full-stack 3D point-cloud annotation platform for autonomous-vehicle perception teams &mdash; led from prototype to production.</p>
+          <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-4">
+            <figure class="w-full sm:w-1/2 max-w-md">
+              <img src="./3D.gif" alt="Demo: clicking a LiDAR point cloud auto-generates a 3D bounding box via DBSCAN clustering" loading="lazy" class="w-full rounded-lg shadow-md" />
+              <figcaption class="text-xs text-gray-500 mt-2 text-center">AI-assisted cuboid annotation: one click &rarr; DBSCAN &rarr; bounding box</figcaption>
+            </figure>
+            <figure class="w-full sm:w-1/2 max-w-md">
+              <img src="./4D.gif" alt="Demo: 4D point-cloud annotation tracking objects across space and time" loading="lazy" class="w-full rounded-lg shadow-md" />
+              <figcaption class="text-xs text-gray-500 mt-2 text-center">4D segmentation: tracking objects across 3D space + time</figcaption>
+            </figure>
+          </div>
+          <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
+          <p class="text-gray-300">State-of-the-art detection models needed extensive labeling, yet annotating large LiDAR scenes was slow &mdash; and heavy scenes crashed browsers.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">My Role</h4>
+          <p class="text-gray-300">Led full-stack development (React/Three.js frontend, Flask/Spring backend) and drove ML-assisted annotation from prototype to production.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Technical Work</h4>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li>Click-to-annotate: fast DBSCAN clustering on k-d trees auto-generates bounding boxes.</li>
+            <li>GPU shaders for point coloring plus octree frustum culling: smooth rendering from 1M to <strong class="text-white">10M+ points</strong>.</li>
+            <li>Semantic segmentation for point-level classification; real-time AI-assisted interaction.</li>
+            <li>Annotator-telemetry dashboards giving operations teams visibility into worker bottlenecks.</li>
+            <li>Sensor fusion experiments: real-time projection of 3D LiDAR points into 2D camera views; multi-sensor (LiDAR, radar, camera) fusion supporting annotation accuracy.</li>
+          </ul>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Impact</h4>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li><strong class="text-white">35% faster annotation</strong>; <strong class="text-white">20+ AV/robotics clients</strong> &mdash; flagship product born from a hackathon-weekend prototype.</li>
+            <li><strong class="text-white">56% lower labeling costs</strong> through workflow analytics.</li>
+          </ul>
+          <div class="aspect-video w-full rounded-md mt-4 overflow-hidden">
+            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/gDQWW3u_2AI" title="Tech Day Demo - LiDAR Annotation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="aspect-video w-full rounded-md mt-4 overflow-hidden">
+            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/LFIJ32s54aY" title="Tech Day Demo - LiDAR Lane Line Segmentation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
         </div>
       </section>
 
       <section>
-        <h2 class="text-white text-2xl font-semibold mt-10 mb-4">Key Achievements</h2>
-
-        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
-          <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="text-lg font-semibold text-white">Wing</h3>
-            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Google X Moonshot</span>
-          </div>
-          <p class="my-2">I addressed the challenge of integrating autonomous drones into regulated airspace. I developed the configuration systems and backend for OpenSky, Google Maps-based operational interfaces, allowing operators to monitor multiple drones efficiently. Previously, one operator could only oversee one aircraft, creating a bottleneck in scaling our service. My contributions met regulatory requirements from agencies such as FAA and CASA, enhancing the scalability and safety of our drone delivery operations.</p>
-          <p class="my-2">
-            <a href="https://x.company/projects/wing/" target="_blank" rel="noopener noreferrer" class="block mt-2 rounded-md bg-gray-700 hover:bg-gray-600 transition p-8 text-center group">
-              <img src="./wing-sketch.png" alt="A sketch of an early Wing prototype" loading="lazy" class="w-full max-w-2xl mx-auto rounded-lg group-hover:opacity-90 transition" />
-              <span class="block text-sm text-gray-400 mt-4">x.company/projects/wing — opens in a new tab &#8599;</span>
-            </a>
-          </p>
-        </div>
-
-        <div class="bg-gray-800 rounded-lg p-6 my-6 shadow-md">
-          <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="text-lg font-semibold text-white">Appen</h3>
-            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">fka Figure Eight</span>
-          </div>
-          <p class="my-2">As the lead developer of 3D point cloud annotation tools, I aimed to reduce annotation costs through machine learning. Initially, state-of-the-art object detection models required extensive labeling, limiting their effectiveness. To improve efficiency, I implemented a real-time AI-assisted interaction inspired by academic research. Annotators could click on the point cloud, triggering DBSCAN clustering to generate a bounding box. This approach improved annotation efficiency by 35%.</p>
-          <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-4">
-            <img src="./3D.gif" alt="Example 1" loading="lazy" class="w-full sm:w-1/2 max-w-md rounded-lg shadow-md" />
-            <img src="./4D.gif" alt="Example 2" loading="lazy" class="w-full sm:w-1/2 max-w-md rounded-lg shadow-md" />
-          </div>
-        </div>
+        <h2 class="text-white text-2xl font-semibold mt-10 mb-4">Recognition</h2>
+        <ul class="list-disc pl-5 space-y-1 text-sm text-gray-400 my-4">
+          <li>EB-2 National Interest Waiver (NIW) for contributions to autonomous / uncrewed systems and robotics</li>
+          <li>Google C++ Readability</li>
+        </ul>
       </section>
-
-      <footer class="mt-16 text-sm text-center">
-        <a href="https://alanwanga.github.io/TaoyuanWang_resume.pdf" target="_blank" class="text-blue-400 hover:text-purple-400 underline">View Resume</a> for contact details<br> — I’d be glad to hear from you!<br></br>
+      <footer class="mt-16 mb-8 text-center">
+        <p class="text-gray-600 text-xs"><span class="font-mono">taoyuanw@google.com</span> &middot; Sep 2026</p>
       </footer>
     </main>
   </body>
