@@ -14,6 +14,7 @@
         <div>
           <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Taoyuan Wang</h1>
           <p class="text-gray-300 font-medium mt-1">Autonomous Systems &amp; Robotics Software Engineer</p>
+          <p class="text-gray-500 text-sm mt-1 font-mono">taoyuanw@</p>
         </div>
       </div>
       <p class="text-gray-400 text-sm mt-4">Safety-critical distributed systems &middot; Geospatial infrastructure &middot; AI-powered robotics</p>
@@ -21,8 +22,6 @@
       <div class="flex flex-wrap gap-3 mt-5">
         <a href="https://alanwanga.github.io/TaoyuanWang_resume.pdf" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 transition text-white text-sm font-semibold px-5 py-2.5 rounded-lg">Resume</a>
         <a href="https://www.linkedin.com/in/taoyuanwang" target="_blank" rel="noopener noreferrer" class="border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition text-gray-200 text-sm font-medium px-5 py-2.5 rounded-lg">LinkedIn</a>
-        <a href="https://github.com/alanwanga" target="_blank" rel="noopener noreferrer" class="border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition text-gray-200 text-sm font-medium px-5 py-2.5 rounded-lg">GitHub</a>
-        <a href="mailto:taoyuanw@google.com" class="border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition text-gray-200 text-sm font-medium px-5 py-2.5 rounded-lg">Email</a>
       </div>
     </header>
 
@@ -132,6 +131,33 @@
 
         <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
           <p class="text-xs font-semibold tracking-widest text-gray-500 mb-2">03</p>
+          <h3 class="text-xl font-bold text-white">Safety-Critical Configuration &amp; Authorization</h3>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Authorization</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">RBAC</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Distributed Configuration</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Migration</span>
+          </div>
+          <p class="my-3 text-gray-300">Re-architected a legacy authorization/configuration system into independently managed domains &mdash; with zero downtime and full backward compatibility.</p>
+          <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
+          <p class="text-gray-300">The legacy auth module was complex and failure-prone due to synchronization dependencies; it had to be modernized without interrupting safety-critical operations.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">My Role</h4>
+          <p class="text-gray-300">Led the design and implementation of configuration schemas and validation mechanisms.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Technical Work</h4>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li>Decomposed the monolith into three services: Organization, User, and Member License Management.</li>
+            <li>Centralized permissions into configuration with schema validation that prevents user error.</li>
+            <li>Role-based permission checks optimized for low-latency paths (e.g., pilot-issued emergency landing).</li>
+          </ul>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Impact</h4>
+          <ul class="list-disc pl-5 space-y-1 text-gray-300">
+            <li><strong class="text-white">Zero-downtime migration</strong>; synchronization failures eliminated.</li>
+            <li>Operational effort cut from hours to minutes; lower authorization latency.</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 mb-2">04</p>
           <h3 class="text-xl font-bold text-white">3D Perception &amp; Annotation Platform</h3>
           <div class="flex flex-wrap gap-2 mt-3">
             <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">LiDAR</span>
@@ -161,6 +187,7 @@
             <li>GPU shaders for point coloring plus octree frustum culling: smooth rendering from 1M to <strong class="text-white">10M+ points</strong>.</li>
             <li>Semantic segmentation for point-level classification; real-time AI-assisted interaction.</li>
             <li>Annotator-telemetry dashboards giving operations teams visibility into worker bottlenecks.</li>
+            <li>Sensor fusion experiments: real-time projection of 3D LiDAR points into 2D camera views; multi-sensor (LiDAR, radar, camera) fusion supporting annotation accuracy.</li>
           </ul>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Impact</h4>
           <ul class="list-disc pl-5 space-y-1 text-gray-300">
@@ -180,41 +207,6 @@
             <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/LFIJ32s54aY" title="Tech Day Demo - LiDAR Lane Line Segmentation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
-
-        <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
-          <p class="text-xs font-semibold tracking-widest text-gray-500 mb-2">04</p>
-          <h3 class="text-xl font-bold text-white">Safety-Critical Configuration &amp; Authorization</h3>
-          <div class="flex flex-wrap gap-2 mt-3">
-            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Authorization</span>
-            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">RBAC</span>
-            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Distributed Configuration</span>
-            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Migration</span>
-          </div>
-          <p class="my-3 text-gray-300">Re-architected a legacy authorization/configuration system into independently managed domains &mdash; with zero downtime and full backward compatibility.</p>
-          <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
-          <p class="text-gray-300">The legacy auth module was complex and failure-prone due to synchronization dependencies; it had to be modernized without interrupting safety-critical operations.</p>
-          <h4 class="text-sm font-bold text-white mt-4 mb-1">My Role</h4>
-          <p class="text-gray-300">Led the design and implementation of configuration schemas and validation mechanisms.</p>
-          <h4 class="text-sm font-bold text-white mt-4 mb-1">Technical Work</h4>
-          <ul class="list-disc pl-5 space-y-1 text-gray-300">
-            <li>Decomposed the monolith into three services: Organization, User, and Member License Management.</li>
-            <li>Centralized permissions into configuration with schema validation that prevents user error.</li>
-            <li>Role-based permission checks optimized for low-latency paths (e.g., pilot-issued emergency landing).</li>
-          </ul>
-          <h4 class="text-sm font-bold text-white mt-4 mb-1">Impact</h4>
-          <ul class="list-disc pl-5 space-y-1 text-gray-300">
-            <li><strong class="text-white">Zero-downtime migration</strong>; synchronization failures eliminated.</li>
-            <li>Operational effort cut from hours to minutes; lower authorization latency.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="text-white text-2xl font-semibold mt-10 mb-4">Earlier Work</h2>
-        <div class="bg-gray-800 rounded-lg p-5 my-6 shadow-md">
-          <h3 class="text-base font-semibold text-white">Appen Sensor Fusion Experiments</h3>
-          <p class="my-2 text-sm text-gray-400">Real-time projection of 3D LiDAR points into 2D camera views across client coordinate systems; multi-sensor (LiDAR, radar, camera) fusion supporting annotation accuracy for self-driving and unmanned aircraft.</p>
-        </div>
       </section>
 
       <section>
@@ -224,17 +216,6 @@
           <li>EB-2 National Interest Waiver (NIW) for contributions to autonomous / uncrewed systems and robotics</li>
         </ul>
       </section>
-
-      <footer class="mt-16 text-sm text-center">
-        <a href="https://alanwanga.github.io/TaoyuanWang_resume.pdf" target="_blank" class="text-blue-400 hover:text-purple-400 underline">Resume</a>
-        <span class="text-gray-600"> &middot; </span>
-        <a href="https://www.linkedin.com/in/taoyuanwang" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-purple-400 underline">LinkedIn</a>
-        <span class="text-gray-600"> &middot; </span>
-        <a href="https://github.com/alanwanga" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-purple-400 underline">GitHub</a>
-        <span class="text-gray-600"> &middot; </span>
-        <a href="mailto:taoyuanw@google.com" class="text-blue-400 hover:text-purple-400 underline">Email</a>
-        <p class="text-gray-600 text-xs mt-3">v2 experiment &mdash; <a href="https://alanwanga.github.io/portfolio/" class="underline hover:text-gray-400">view original</a></p>
-      </footer>
     </main>
   </body>
 </html>
