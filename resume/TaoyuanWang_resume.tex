@@ -1,0 +1,208 @@
+%-------------------------------------------------------------------------------
+% TaoyuanWang_resume.tex -- source of truth for TaoyuanWang_resume.pdf
+% Target role: Backend Software Engineer, Google DeepMind Robotics
+% Story line: human-in-the-loop infrastructure for autonomous systems (framing only;
+%   bullets lead with backend signal: scale, reliability, data).
+% Location in repo: resume/TaoyuanWang_resume.tex
+% Template: based on Jake's Resume (Jake Gutierrez, MIT License,
+%   https://github.com/jakegut/resume), adapted: \resumeEducation macro keeps the
+%   M.S./B.S. rows in one table; heading tables use \linewidth so dates align
+%   with the bullet text.
+% Build: pdflatex TaoyuanWang_resume.tex  (must compile to exactly 1 page)
+% Edit this file for all future resume changes; never edit the PDF directly.
+% Tailoring: every bullet lives in the bullet bank below (\defbullet{id}{text});
+%   pick and order bullets with \usebullet{id}; edit the Skills lines directly.
+%   Hidden bullets do not appear in the PDF.
+%-------------------------------------------------------------------------------
+\documentclass[letterpaper,11pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\hypersetup{pdftitle={Taoyuan Wang - Resume}, pdfauthor={Taoyuan Wang}}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSingleHeading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeEducation}[6]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{\small#5} & \textit{\small #6} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+% ---------------------------------------------------------------------------
+% Bullet bank. \defbullet stores a bullet; only bullets passed to \usebullet
+% appear in the PDF. This repo is PUBLIC: every bullet here, shown or not,
+% must follow the accuracy rules (no internal names, no unapproved numbers).
+% ---------------------------------------------------------------------------
+\newcommand{\defbullet}[2]{\expandafter\def\csname bullet@#1\endcsname{#2}}
+\newcommand{\usebullet}[1]{\resumeItem{\csname bullet@#1\endcsname}}
+
+
+% ---- Wing: bullets used in the GDM Robotics backend version (see \usebullet order) ----
+% tags: robotics sim perception control
+\defbullet{wing-tangy-sim}{Independently rebuilt a multi-drone delivery PoC in MuJoCo (simulation): \textbf{Gemini Robotics-ER} perception from camera pixels with depth back-projection and Kalman tracking, plus a geometric SE(3) flight controller}
+% tags: robotics safety eval
+\defbullet{wing-tangy-eval}{Built a Simplex safety layer and evaluation benchmark: deterministic checks gate every Gemini plan; an independent 50 Hz ground-truth auditor scores runs (\textbf{0 violations} in 300 adversarial plans + 240 runs)}
+% tags: sim safety reliability
+\defbullet{wing-prober-sim}{Led end-to-end validation of a safety-critical emergency-landing command on \textbf{simulated vehicles} in pre-production, asserting state transitions against deadlines; wrote the on-call debugging playbook}
+% tags: autonomy hri backend
+\defbullet{wing-oversight-hri}{Main backend engineer for the human-in-the-loop supervision system behind FAA approval for a \textbf{10$\times$ increase in aircraft per operator}, shifting operators to management by exception}
+% tags: geo cpp data
+\defbullet{wing-s2-spatial}{Built C++ services for 4D (3D + time) spatial constraint checking with \textbf{S2 Geometry}; precomputed geometric joins offline in a Flume pipeline}
+% tags: llm safety hri
+\defbullet{wing-gemini-tools}{Built PoC Gemini-in-the-loop operator tools (models propose, deterministic checks + humans decide): schema-constrained 4D flight-restriction drafting and incident triage tested via time-cutoff replay}
+% tags: backend auth data
+\defbullet{wing-rbac-license}{Led design (eng lead) of config-driven RBAC with per-RPC permission checks; owned the pilot License service and its dual-write Spanner migration without a maintenance window}
+
+
+% ---- Wing: hidden alternates (airspace/backend framing, for other JDs) ----
+% tags: backend auth
+\defbullet{wing-rbac}{Led design (eng lead) of OpenSky user, organization, and license management; replaced legacy ACL sync with config-driven RBAC on Spanner (one keyed read + in-memory lookup per RPC) behind feature flags}
+% tags: backend autonomy
+\defbullet{wing-oversight}{Main backend engineer for the operator oversight system (restrictions, operating areas, pilot coverage) behind FAA approval for a 10$\times$ increase in aircraft per operator via management by exception}
+% tags: geo cpp regulatory
+\defbullet{wing-s2-faa}{Built C++ microservices (Protobuf, S2 Geometry) for 4D (3D + time) airspace validation and FAA rules (Part~107, LAANC, Class E2); precomputed a surface Class E2 join in a Flume importer by S2 cell + airport ID}
+% tags: sim safety reliability
+\defbullet{wing-prober}{Led an end-to-end blackbox prober for the emergency-landing command path on pre-production virtual aircraft, triggering the operator API and asserting state transitions against deadlines, with an on-call playbook}
+% tags: backend data migration
+\defbullet{wing-license}{Owned the pilot License service (pre-flight license checks) and its public API; designed its dual-write Spanner migration (idempotent backfill, atomic dual writes, flag-gated read cutover) without a maintenance window}
+% tags: robotics sim
+\defbullet{wing-tangy}{Co-built a multi-drone coordination PoC; independently rebuilt it in MuJoCo with Gemini Robotics-ER pixel perception and a Simplex safety layer (0 violations in 300 adversarial plans + 240 runs; 20/20 end-to-end simulated deliveries)}
+
+
+% ---- Other experience: shown ----
+% tags: perception 3d frontend
+\defbullet{appen-3d-tools}{Led end-to-end development of ML-assisted, human-verified \textbf{3D/LiDAR} annotation tools (React/Three.js, Flask/Spring): click-to-box via DBSCAN on k-d trees, and GPU shaders + octree culling (1M to 10M+ points)}
+% tags: perception product
+\defbullet{appen-segmentation-product}{Extended cuboid annotation into 4D (3D + time) point-cloud semantic segmentation as a PoC side project, later launched as a product used by \textbf{20+ leading clients} in autonomous vehicles and robotics}
+% tags: leadership
+\defbullet{appenchina-founding}{Founding engineer at Appen China; built the localized annotation platform for the Chinese market}
+% tags: perception sensor-fusion
+\defbullet{appenchina-perception}{Prototyped 3D point-cloud object detection/tracking for pre-labeling and NumPy LiDAR-to-camera projection from device calibration intrinsics/extrinsics to support multi-sensor fusion annotation}
+% tags: data impact
+\defbullet{appenchina-analytics}{Built annotator event logging and workflow analytics with UX designers and data scientists, driving training and tooling improvements that reduced labeling costs by \textbf{56\%}}
+% tags: fullstack ml
+\defbullet{works-erp}{Built full-stack enterprise ERP features (Vue.js frontend, Spring/Hibernate backend) and prototyped a transformer-based chatbot and LSTM-based OCR (Tesseract) for workflow automation}
+% tags: nlp research
+\defbullet{sinica-dialogue}{Researched conversational agents for Chinese short text and maintained a large Weibo post--comment dataset}
+% tags: ml rl research
+\defbullet{sinica-rl}{Implemented Seq2Seq with attention in PyTorch, fine-tuned with \textbf{reinforcement learning} using human-rated comment appropriateness scores as rewards (an early RLHF-style setup)}
+
+
+% ---- Hidden alternates (verified, public-safe; swap in per JD) ----
+% tags: backend api reliability
+\defbullet{wing-public-apis}{Built public Licenses and Flights APIs (service definitions, CRUD handlers, schema changes, functional tests); authored and executed a phased, metrics-gated turndown of a legacy public API}
+% tags: backend rollout
+\defbullet{wing-coverage-rollout}{Rolled out transactional on-duty coverage updates to 100\% of production via staged experiments}
+% tags: backend config rollout docs
+\defbullet{wing-license-onboarding}{Owned per-country pilot license types validated in the core service, with configuration rolled out environment by environment only after serving binaries understood each new type; wrote the team's license-type onboarding guide}
+% tags: geo cpp validation
+\defbullet{wing-4d-validators}{Built validators for 4D (3D + time) airspace volumes with S2 Geometry: self-intersection, loop orientation, altitude bounds, and time window}
+% tags: geo data regulatory
+\defbullet{wing-class-e2}{Designed a surface Class E2 advisory rule and built the Flume pipeline that precomputes an airspace join offline (keyed by S2 cell and airport ID), reducing the online check to a generic intersection test}
+% tags: robotics perception sim
+\defbullet{wing-tangy-perception}{Built perception from pixels in simulation: Gemini Robotics-ER points at objects in RGB-D frames, back-projected with depth and tracked with a Kalman filter and Hungarian association (recall 0.80--0.82 at precision 0.95--0.96)}
+% tags: robotics control sim safety
+\defbullet{wing-tangy-control}{Built a geometric SE(3) quadrotor controller in MuJoCo that settles a 1 m step in 1.6 s and holds hover within 1 cm under a 2 N side wind; an onboard monitor can land the drone without a cloud link}
+% tags: robotics eval llm
+\defbullet{wing-tangy-results}{In MuJoCo simulation, delivered 20/20 end-to-end Gemini-planned missions to the right target; on a 10-task suite (3 runs each), planning went from 12/30 to 30/30 once the planner saw the scene (annotated scout image, own drones masked, targets described by color)}
+% tags: robotics sim data
+\defbullet{wing-tangy-tooling}{In the original co-built PoC, text descriptions generated custom 3D test scenes, and commands, reasoning, actions, and feedback were logged as episodes for a reinforcement-learning dataset}
+% tags: perception data tooling
+\defbullet{appen-telemetry}{Built annotator-telemetry dashboards giving operations teams visibility into worker bottlenecks}
+% tags: perception sensor-fusion
+\defbullet{appen-fusion}{Ran sensor fusion experiments: real-time projection of 3D LiDAR points into 2D camera views and multi-sensor (LiDAR, radar, camera) fusion to support annotation accuracy}
+% tags: perception ml frontend
+\defbullet{appen-segmentation}{Built point-level semantic segmentation with real-time AI-assisted interaction}
+
+
+\begin{document}
+\begin{center}
+    \textbf{\Huge \scshape Taoyuan Wang} \\ \vspace{1pt}
+    \small +1-669-609-3436 $|$ \href{mailto:alanwanga@gmail.com}{alanwanga@gmail.com} $|$
+    \href{https://www.linkedin.com/in/taoyuanwang}{linkedin.com/in/taoyuanwang} $|$
+    \href{https://alanwanga.github.io/portfolio}{alanwanga.github.io/portfolio} $|$ SF Bay Area
+\end{center}
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading{Software Engineer at Wing (Alphabet)}{Oct 2022 -- Present}{UAS (Uncrewed Aircraft Systems) Traffic Management (UTM) Team}{Palo Alto, CA}
+      \resumeItemListStart
+        \usebullet{wing-oversight-hri}
+        \usebullet{wing-s2-spatial}
+        \usebullet{wing-rbac-license}
+        \usebullet{wing-prober-sim}
+        \usebullet{wing-tangy-sim}
+        \usebullet{wing-tangy-eval}
+        \usebullet{wing-gemini-tools}
+      \resumeItemListEnd
+    \resumeSubheading{Software Engineer at Appen (fka Figure Eight)}{Oct 2021 -- Oct 2022}{Computer Vision Tools Team (Internal transfer from China)}{Sunnyvale, CA}
+      \resumeItemListStart
+        \usebullet{appen-3d-tools}
+        \usebullet{appen-segmentation-product}
+      \resumeItemListEnd
+    \resumeSubheading{Software Engineer at Appen China}{Apr 2019 -- Sep 2021}{Computer Vision Tools Team}{Shanghai, China}
+      \resumeItemListStart
+        \usebullet{appenchina-founding}
+        \usebullet{appenchina-perception}
+        \usebullet{appenchina-analytics}
+      \resumeItemListEnd
+    \resumeSubheading{Software Engineer at Works Applications}{Apr 2018 -- Mar 2019}{AI WORKS HUE Tech Lead Group}{Shanghai, China}
+      \resumeItemListStart
+        \usebullet{works-erp}
+      \resumeItemListEnd
+    \resumeSubheading{Research Assistant at Academia Sinica}{Dec 2017 -- Mar 2018}{Natural Language Processing Lab}{Taipei, Taiwan}
+      \resumeItemListStart
+        \usebullet{sinica-dialogue}
+        \usebullet{sinica-rl}
+      \resumeItemListEnd
+    \resumeSingleHeading{IT Specialist at Social Affairs Bureau (Military Service)}{Nov 2016 -- Oct 2017}
+  \resumeSubHeadingListEnd
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeEducation{National Tsing Hua University}{Hsinchu, Taiwan}
+      {M.S. in Computer Science (Graduate Researcher at Internet Lab)}{Sep 2015 -- Aug 2016}
+      {B.S. in Computer Science (Exchanged to Beijing Tsinghua and Nagoya University)}{Sep 2010 -- Aug 2015}
+  \resumeSubHeadingListEnd
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}: C++, Python, Java, TypeScript/JavaScript \\
+     \textbf{Backend \& Data}: gRPC, Protocol Buffers, Spanner, Flume, Docker, GCP, AWS, Flask, Spring \\
+     \textbf{Robotics \& ML}: MuJoCo, Gemini Robotics-ER, Gemini API, PyTorch, NumPy, S2 Geometry, Three.js (WebGL) \\
+     \textbf{Tools \& Certification}: pytest, JUnit, Jest, Git, Jenkins, Google Antigravity; Google C++ Readability (2024)
+    }}
+ \end{itemize}
+\end{document}

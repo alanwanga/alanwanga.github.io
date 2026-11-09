@@ -8,3 +8,9 @@ Gemfile
 Gemfile.lock
 node_modules
 package.json
+
+# LaTeX build artifacts (resume/ source is tracked; its build outputs are not)
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.pdf
