@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taoyuan Wang | Autonomous Systems &amp; Robotics Software Engineer</title>
-    <meta name="description" content="Taoyuan Wang is a backend software engineer building human-in-the-loop infrastructure for autonomous systems: operator supervision and authorization for autonomous aircraft, safety gates for model-planned robotics in simulation, and ML-assisted 3D perception tooling." />
+    <meta name="description" content="Taoyuan Wang is a backend software engineer building human-in-the-loop infrastructure for autonomous systems: operator supervision and authorization for autonomous aircraft, safety gates for LLM/VLM-planned robotics in simulation, and ML-assisted 3D perception tooling." />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-900 text-gray-200 font-sans leading-relaxed px-4 sm:px-6 lg:px-12 max-w-5xl mx-auto text-base">
@@ -21,6 +21,7 @@
       <div class="flex flex-wrap gap-3 mt-5">
         <a href="https://alanwanga.github.io/TaoyuanWang_resume.pdf" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 transition text-white text-sm font-semibold px-5 py-2.5 rounded-lg">Resume</a>
         <a href="https://www.linkedin.com/in/taoyuanwang" target="_blank" rel="noopener noreferrer" class="border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition text-gray-200 text-sm font-medium px-5 py-2.5 rounded-lg">LinkedIn</a>
+        <a href="https://github.com/alanwanga" target="_blank" rel="noopener noreferrer" class="border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition text-gray-200 text-sm font-medium px-5 py-2.5 rounded-lg">GitHub</a>
       </div>
     </header>
 
@@ -88,7 +89,7 @@
             <li>Built validators for 4D (3D + time) airspace volumes using S2 Geometry (self-intersection, loop orientation, altitude bounds, time window).</li>
             <li>Designed a surface Class E2 advisory rule and built the Flume pipeline that precomputes an airspace join offline (keyed by S2 cell and airport ID) into Wing&rsquo;s geospatial data store, reducing the online check to a generic intersection test.</li>
             <li>Owned the pilot License service behind pre-flight license checks: per-country license types validated in the core service, with configuration rolled out environment by environment only after the serving binaries understand each new type; wrote the team&rsquo;s license-type onboarding guide.</li>
-            <li>Built PoC Gemini-in-the-loop operator tools where the model proposes and deterministic checks plus humans decide: schema-constrained drafting of 4D flight restrictions that operators accept or reject, and a read-only on-call incident triage assistant evaluated by time-cutoff replay of past incidents.</li>
+            <li>Built PoC LLM-in-the-loop operator tools where the model proposes and deterministic checks plus humans decide: schema-constrained drafting of 4D flight restrictions that operators accept or reject, and a read-only on-call incident triage assistant (e.g. InterUSS / ASTM F3548 interoperability and deconfliction alerts) evaluated by time-cutoff replay of past incidents.</li>
           </ul>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Impact</h4>
           <ul class="list-disc pl-5 space-y-1 text-gray-300">
@@ -127,21 +128,25 @@
           </div>
           <p class="text-xs text-gray-500 mt-2 text-center">Original PoC demo (Three.js + Flask), before the MuJoCo rebuild</p>
           <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
-          <p class="text-gray-300">Vision-language and reasoning models can translate open-ended mission descriptions into multi-drone task plans, but in a safety-critical airspace setting, a hallucinated or unsafe plan must never reach flight execution.</p>
+          <p class="text-gray-300">Vision-language models (VLMs) and large language models (LLMs) can translate open-ended mission descriptions into multi-drone task plans, but in a safety-critical airspace setting, a hallucinated or unsafe plan must never reach flight execution.</p>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">My Role</h4>
           <p class="text-gray-300">Co-built the original PoC (Three.js + Flask); independently rebuilt it end to end in MuJoCo with quadrotor physics, pixel-based perception, a deterministic Simplex safety layer, and an automated evaluation benchmark.</p>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Technical Work</h4>
           <ul class="list-disc pl-5 space-y-1 text-gray-300">
             <li>Simplex architecture: Gemini turns mission text and scene tracks into a task graph; deterministic code assigns drones, times trajectories, and checks geofence, altitude, no-fly zones, separation, and battery &mdash; routing violations back to Gemini (up to 3 rounds) and then to a human operator under the same checks.</li>
             <li>Perception from pixels: Gemini Robotics-ER points at objects in simulated RGB-D camera frames; points are back-projected with depth and tracked via a Kalman filter with Hungarian association (recall 0.80&ndash;0.82 at precision 0.95&ndash;0.96).</li>
+            <li>Robotics VLM vs. general-purpose model: on the same 24 simulated frames, Gemini Robotics-ER outperformed general-purpose Gemini Flash on five-class detection (recall/precision 0.80&ndash;0.82 / 0.95&ndash;0.96 vs. 0.60 / 0.77) with zero frame-budget timeouts (0 vs. 6 of 24); simple planning tasks did not separate them.</li>
+            <li>Simplex ablation under live Gemini planning: with all safety layers on, 0 of 30 runs violated a constraint; with the plan validator off, the onboard monitor braked every unsafe flight; with both off, 4 of 30 runs entered a no-fly zone or left the geofence. All violations came from refusal tasks, so this shows what each layer catches, not how often plans are unsafe.</li>
+            <li>Robustness: across three seeded scene layouts, VLM-grounded planning succeeded on 29 of 30 runs; with walking bystanders, live Gemini runs succeeded 18 of 18 with 0 violations; under random mid-cruise gusts, 120 runs had 0 geofence, no-fly, or separation violations.</li>
             <li>Flight control &amp; onboard monitor: geometric SE(3) controller settles a 1 m step in 1.6 s and holds hover within 1 cm under a 2 N side wind; an independent onboard monitor runs every tick to land the drone without relying on cloud connectivity.</li>
             <li>Independent ground-truth audit: a 50 Hz auditor sharing zero code with the planner checker scores safety violations against simulator state, and every model stage is benchmarked against an oracle baseline.</li>
             <li>(Original PoC) Text descriptions generate custom 3D test scenes.</li>
             <li>(Original PoC) Logs commands, reasoning, actions, and feedback as episodes for a reinforcement-learning dataset.</li>
+            <li>Related open-source work: a MuJoCo camera-intrinsics utility and Gazebo MuJoCo plugin PRs (see Open Source below).</li>
           </ul>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Impact</h4>
           <ul class="list-disc pl-5 space-y-1 text-gray-300">
-            <li><strong class="text-white">0 safety violations</strong> across 300 adversarial plans, 8 adversarial physics episodes, and 240 benchmark runs.</li>
+            <li><strong class="text-white">0 safety violations</strong> across 300 adversarial plans, 8 adversarial physics episodes, and 360 benchmark runs.</li>
             <li><strong class="text-white">20/20 end-to-end simulated missions</strong> (live Gemini calls) delivered the payload to the right target; on a 10-task benchmark suite (3 runs per task), Gemini Robotics-ER planning improved from <strong class="text-white">12/30 to 30/30</strong> once the planner saw the scene (annotated scout image, own drones masked, targets described by color).</li>
           </ul>
         </div>
@@ -231,11 +236,116 @@
 
 
       <section>
+        <h2 class="text-white text-2xl font-semibold mt-10 mb-4">Open Source</h2>
+        <p class="text-gray-400">Contributions to robotics simulation and multi-robot traffic projects. Each card links to the pull request with the code and review.</p>
+        <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
+          <div class="flex items-center gap-3 flex-wrap">
+            <h3 class="text-xl font-bold text-white">ros_gz: Clean Shutdown of the Gazebo Simulation Interfaces</h3>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Gazebo</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">C++</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">ROS 2</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">rclcpp</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Concurrency</span>
+          </div>
+          <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
+          <p class="text-gray-300">The <code>GzServer</code> ROS 2 component initialized its simulation interfaces in a detached thread that could wait several seconds for Gazebo. Shutting the component down during that window (e.g. Ctrl+C right after startup) destroyed the interfaces while the thread was still running, so the node and the rclcpp context stayed alive until exit and the thread could touch freed memory.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Fix</h4>
+          <p class="text-gray-300">Joined the thread in the destructor instead of detaching it, and added a stop flag so the waits for Gazebo end early on shutdown, plus a regression test that fails without the fix. With Ctrl+C 1&ndash;2 s after startup, the rclcpp context&apos;s use count at exit dropped from 3 to 1; normal startup is unchanged.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Why It Matters</h4>
+          <p class="text-gray-300">Composable ROS 2 nodes are loaded and unloaded inside long-running containers; a thread that outlives its component leaks the context and can touch freed memory in a process that keeps running.</p>
+          <p class="mt-4"><a href="https://github.com/gazebosim/ros_gz/pull/1039" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-medium">gazebosim/ros_gz #1039 &rarr;</a></p>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
+          <div class="flex items-center gap-3 flex-wrap">
+            <h3 class="text-xl font-bold text-white">gz-physics MuJoCo Plugin: Nested-Model Removal</h3>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Gazebo</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">C++</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">MuJoCo</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Physics Simulation</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Testing</span>
+          </div>
+          <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
+          <p class="text-gray-300">The MuJoCo physics plugin advertised entity removal, but removing a nested model by index or by name was a TODO stub that always returned false, so the call silently did nothing. Existing tests skipped this path for MuJoCo.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Fix</h4>
+          <p class="text-gray-300">Implemented both the same way as top-level model removal: look up the direct child and reuse the existing removal path, which already removes grandchildren. Missing names, out-of-range indices, and already-removed models return false. A new cross-engine test fails without the fix.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Why It Matters</h4>
+          <p class="text-gray-300">A silent no-op is worse than an error in simulation: the scene looks updated but still contains the model, so the physics no longer matches what the caller believes.</p>
+          <p class="mt-4"><a href="https://github.com/gazebosim/gz-physics/pull/1192" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-medium">gazebosim/gz-physics #1192 &rarr;</a></p>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
+          <div class="flex items-center gap-3 flex-wrap">
+            <h3 class="text-xl font-bold text-white">gz-physics MuJoCo Plugin: Reject Cross-World Constraints</h3>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Gazebo</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">C++</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">MuJoCo</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Physics Simulation</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Reliability</span>
+          </div>
+          <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
+          <p class="text-gray-300">Attaching a fixed joint or setting a mimic constraint accepted an endpoint from a different world. The plugin wrote that world&apos;s body or joint name into this world&apos;s MuJoCo model, so the next recompile failed and the following simulation step segfaulted.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Fix</h4>
+          <p class="text-gray-300">Check that both endpoints belong to the same world before changing anything. A cross-world call now logs an error and is rejected, leaving both worlds unchanged. New tests make a cross-world call and then step both worlds; without the fix they segfault.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Why It Matters</h4>
+          <p class="text-gray-300">Running several worlds in one process (e.g. parallel simulations) should fail with a clear error on invalid input, not crash the whole process.</p>
+          <p class="mt-4"><a href="https://github.com/gazebosim/gz-physics/pull/1193" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-medium">gazebosim/gz-physics #1193 &rarr;</a></p>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
+          <div class="flex items-center gap-3 flex-wrap">
+            <h3 class="text-xl font-bold text-white">Open-RMF rmf_traffic: Per-Lane Speed Limits</h3>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Open-RMF</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">C++</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Trajectory Planning</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Multi-Robot Traffic</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Testing</span>
+          </div>
+          <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
+          <p class="text-gray-300">When collinear lanes were merged into one traversal, the whole stretch was capped at the lowest speed limit; on longer corridors the planner instead chained single-lane traversals that each start and end at rest. With three 5 m lanes limited to 1.0 / 0.3 / 1.0 m/s, the robot stopped twice and took 31.3 s.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Fix</h4>
+          <p class="text-gray-300">Kept each lane&apos;s own limit and built the motion profile with a forward (acceleration) and backward (deceleration) pass, so the robot slows down before the slow lane and speeds up after it without stopping: 29.6 s with no stops. Uniform-limit traversals are unchanged and there are no public API changes; a new test scenario fails on the main branch.</p>
+          <img src="../images/rmf_traffic_speed_profile.png" alt="Speed profile across three lanes limited to 1.0, 0.3, and 1.0 m/s: before, the robot stops twice; after, it slows down for the middle lane without stopping" class="w-full rounded-md mt-4 bg-white" loading="lazy" />
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Why It Matters</h4>
+          <p class="text-gray-300">Fleet traffic schedules are only as good as the trajectories they are built from. At Wing I debugged cross-operator 4D deconfliction incidents on call (InterUSS / ASTM F3548); rmf_traffic&apos;s traffic schedule and conflict checks are the same class of problem.</p>
+          <p class="mt-4"><a href="https://github.com/open-rmf/rmf_traffic/pull/143" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-medium">open-rmf/rmf_traffic #143 &rarr;</a></p>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
+          <div class="flex items-center gap-3 flex-wrap">
+            <h3 class="text-xl font-bold text-white">MuJoCo: Camera Intrinsics Utility</h3>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">MuJoCo</span>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-3">
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">C++</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">MuJoCo</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Rendering</span>
+            <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Perception</span>
+          </div>
+          <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
+          <p class="text-gray-300">Projecting 3D points into rendered images, or back-projecting depth, needs the camera&apos;s pixel intrinsic matrix, and callers had to re-derive it for each camera type.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Fix</h4>
+          <p class="text-gray-300">Implemented a utility that returns the pixel intrinsic matrix for a given viewport size, consistent with what the renderer draws.</p>
+          <h4 class="text-sm font-bold text-white mt-4 mb-1">Why It Matters</h4>
+          <p class="text-gray-300">Perception pipelines built on MuJoCo rendering, such as TAnGY&apos;s depth back-projection, need intrinsics that match the renderer exactly.</p>
+        </div>
+      </section>
+
+
+      <section>
         <h2 class="text-white text-2xl font-semibold mt-10 mb-4">Credentials</h2>
         <ul class="list-disc pl-5 space-y-1 text-sm text-gray-400 my-4">
           <li>Master&apos;s and Bachelor&apos;s degrees in Computer Science, NTHU</li>
           <li>EB-2 National Interest Waiver (NIW) for contributions to autonomous / uncrewed systems and robotics</li>
-          <li>Google C++ Readability (2024)</li>
+          <li>Google C++ Readability</li>
         </ul>
       </section>
       <footer class="mt-16 mb-8 text-center">

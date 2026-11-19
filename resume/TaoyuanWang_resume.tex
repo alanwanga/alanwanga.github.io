@@ -10,9 +10,36 @@
 %   with the bullet text.
 % Build: pdflatex TaoyuanWang_resume.tex  (must compile to exactly 1 page)
 % Edit this file for all future resume changes; never edit the PDF directly.
-% Tailoring: every bullet lives in the bullet bank below (\defbullet{id}{text});
-%   pick and order bullets with \usebullet{id}; edit the Skills lines directly.
-%   Hidden bullets do not appear in the PDF.
+% Generation rules (self-contained: a tailored resume is generated from this file
+%   plus a JD only, so every rule lives here).
+%   - Bullet bank: every bullet is \defbullet{id}{text}; pick and order with
+%     \usebullet{id}. Hidden bullets do not appear in the PDF. The bank is
+%     add-only: never delete or rewrite a bullet; add a new id instead.
+%   - Pick bullets by matching the JD against the "% tags:" line above each one.
+%     Google / Google DeepMind JDs: wing-gemini-tools; other companies:
+%     wing-llm-tools. OSS-heavy JDs: the oss-* bullets may become their own
+%     section or replace one or two Wing bullets.
+%   - Must compile to exactly 1 page. The page is full: every added line needs
+%     one removed. Cut order: "Three.js (WebGL)" in Robotics & ML first; the
+%     Military Service line last.
+%   - Skills: name capabilities, not model APIs. No "<model> API" entries
+%     (e.g. the Gemini model API): they read as only calling an API. Use
+%     capability terms instead (e.g. "LLM Evaluation & Guardrails",
+%     "Gemini Robotics-ER (VLM)"). The PDF must contain "LLM" and "VLM" at
+%     least once each.
+%   - Public repo: no internal links, change/bug numbers, or internal paths
+%     anywhere in this file (comments and hidden bullets included). Only
+%     publicly verifiable or measured numbers.
+%   - Links: the Skills "Open Source" line links each project to
+%     pulls?q=author:alanwanga (all my PRs); each oss-* bullet links one PR.
+%   - MuJoCo counts as open source whether or not it has landed. Until it is on
+%     GitHub: generic name, no link, no unreleased API names, no wording that
+%     implies it shipped. After export: link the public commit (see TODO at
+%     oss-mujoco-camera).
+%   - Alternate Skills "Open Source" lines are kept as comments in the Skills block.
+%   - TAnGY ablation numbers show what each safety layer catches (violations
+%     come from refusal tasks); never present them as an unsafe-plan rate.
+%     Gust results: only geofence/no-fly/separation are 0, not all violations.
 %-------------------------------------------------------------------------------
 \documentclass[letterpaper,11pt]{article}
 \usepackage[empty]{fullpage}
@@ -76,6 +103,10 @@
 \defbullet{wing-tangy-sim}{Independently rebuilt a multi-drone delivery PoC in MuJoCo (simulation): \textbf{Gemini Robotics-ER} perception from camera pixels with depth back-projection and Kalman tracking, plus a geometric SE(3) flight controller}
 % tags: robotics safety eval
 \defbullet{wing-tangy-eval}{Built a Simplex safety layer and evaluation benchmark: deterministic checks gate every Gemini plan; an independent 50 Hz ground-truth auditor scores runs (\textbf{0 violations} in 300 adversarial plans + 240 runs)}
+% tags: robotics safety eval llm ablation
+\defbullet{wing-tangy-eval-ablation}{Built a Simplex safety layer and evaluation benchmark: deterministic checks gate every Gemini plan; an independent 50 Hz ground-truth auditor scores runs (\textbf{0 violations} in 300 adversarial plans + 360 runs; with both safety layers off, 4/30 runs breached airspace)}
+% tags: robotics safety eval llm
+\defbullet{wing-tangy-eval-360}{Built a Simplex safety layer and evaluation benchmark: deterministic checks gate every Gemini plan; an independent 50 Hz ground-truth auditor scores runs (\textbf{0 violations} in 300 adversarial plans + 360 runs)}
 % tags: sim safety reliability
 \defbullet{wing-prober-sim}{Led end-to-end validation of a safety-critical emergency-landing command on \textbf{simulated vehicles} in pre-production, asserting state transitions against deadlines; wrote the on-call debugging playbook}
 % tags: autonomy hri backend
@@ -84,6 +115,8 @@
 \defbullet{wing-s2-spatial}{Built C++ services for 4D (3D + time) spatial constraint checking with \textbf{S2 Geometry}; precomputed geometric joins offline in a Flume pipeline}
 % tags: llm safety hri
 \defbullet{wing-gemini-tools}{Built PoC Gemini-in-the-loop operator tools (models propose, deterministic checks + humans decide): schema-constrained 4D flight-restriction drafting and incident triage tested via time-cutoff replay}
+% tags: llm safety hri utm
+\defbullet{wing-llm-tools}{Built PoC LLM-in-the-loop operator tools (models propose, deterministic checks + humans decide): 4D flight-restriction drafting and incident triage (e.g. InterUSS deconfliction) tested via time-cutoff replay}
 % tags: backend auth data
 \defbullet{wing-rbac-license}{Led design (eng lead) of config-driven RBAC with per-RPC permission checks; owned the pilot License service and its dual-write Spanner migration without a maintenance window}
 
@@ -116,6 +149,8 @@
 \defbullet{appenchina-analytics}{Built annotator event logging and workflow analytics with UX designers and data scientists, driving training and tooling improvements that reduced labeling costs by \textbf{56\%}}
 % tags: fullstack ml
 \defbullet{works-erp}{Built full-stack enterprise ERP features (Vue.js frontend, Spring/Hibernate backend) and prototyped a transformer-based chatbot and LSTM-based OCR (Tesseract) for workflow automation}
+% tags: fullstack ml
+\defbullet{works-erp-short}{Built full-stack ERP features (Vue.js, Spring/Hibernate); prototyped a transformer chatbot and LSTM-based OCR}
 % tags: nlp research
 \defbullet{sinica-dialogue}{Researched conversational agents for Chinese short text and maintained a large Weibo post--comment dataset}
 % tags: ml rl research
@@ -135,6 +170,16 @@
 \defbullet{wing-class-e2}{Designed a surface Class E2 advisory rule and built the Flume pipeline that precomputes an airspace join offline (keyed by S2 cell and airport ID), reducing the online check to a generic intersection test}
 % tags: robotics perception sim
 \defbullet{wing-tangy-perception}{Built perception from pixels in simulation: Gemini Robotics-ER points at objects in RGB-D frames, back-projected with depth and tracked with a Kalman filter and Hungarian association (recall 0.80--0.82 at precision 0.95--0.96)}
+% tags: robotics perception llm vlm eval
+\defbullet{wing-tangy-er-vs-flash}{Benchmarked robotics VLM vs.\ general-purpose Gemini Flash on identical simulated frames: Gemini Robotics-ER outperformed Flash on five-class detection (recall/precision 0.80/0.95 vs.\ 0.60/0.77) with zero frame-budget timeouts (0 vs.\ 6/24)}
+% tags: robotics safety eval ablation
+\defbullet{wing-tangy-simplex-ablation}{Ablated the safety layers under live Gemini planning: 0/30 violations with all layers on; with the plan validator off the onboard monitor braked every unsafe flight; with both off, 4/30 runs entered a no-fly zone or left the geofence}
+% tags: robotics eval sim robustness
+\defbullet{wing-tangy-scene-seeds}{Added seeded scene-layout variation with validity checks and a reference-plan solvability gate; VLM-grounded planning held at 29/30 across three layouts with 0 safety violations in 120 runs}
+% tags: robotics safety hri perception
+\defbullet{wing-tangy-bystanders}{Added walking-bystander handling (5 Hz re-observation, re-validation, time-indexed keep-out audit): live Gemini 18/18 on dynamic tasks with 0 violations, 0 false triggers in 240 static runs}
+% tags: robotics safety reliability
+\defbullet{wing-tangy-gusts}{Injected random mid-cruise gusts: 0 geofence, no-fly, or separation violations in 120 runs; 20/23 runs at 2--6 N finished nominally or landed on a safe pad}
 % tags: robotics control sim safety
 \defbullet{wing-tangy-control}{Built a geometric SE(3) quadrotor controller in MuJoCo that settles a 1 m step in 1.6 s and holds hover within 1 cm under a 2 N side wind; an onboard monitor can land the drone without a cloud link}
 % tags: robotics eval llm
@@ -148,6 +193,20 @@
 % tags: perception ml frontend
 \defbullet{appen-segmentation}{Built point-level semantic segmentation with real-time AI-assisted interaction}
 
+
+% ---- Open source (hidden; see generation rules) ----
+% tags: oss ros2 cpp robotics concurrency
+\defbullet{oss-rosgz-shutdown}{\href{https://github.com/gazebosim/ros_gz/pull/1039}{ros\_gz} (ROS 2): fixed an rclcpp context leak on shutdown by joining a detached init thread; regression test}
+% tags: oss cpp robotics sim
+\defbullet{oss-gzphysics-nested}{\href{https://github.com/gazebosim/gz-physics/pull/1192}{Gazebo gz-physics} (MuJoCo plugin): implemented nested-model removal, previously a silent no-op stub; with tests}
+% tags: oss cpp robotics sim reliability
+\defbullet{oss-gzphysics-crossworld}{\href{https://github.com/gazebosim/gz-physics/pull/1193}{Gazebo gz-physics} (MuJoCo plugin): rejected cross-world fixed joints/mimic constraints that segfaulted; with tests}
+% tags: oss cpp robotics planning
+\defbullet{oss-rmf-speed}{\href{https://github.com/open-rmf/rmf_traffic/pull/143}{Open-RMF rmf\_traffic} (C++): per-lane speed profiles replaced stop-and-go plans (31.3 s, 2 stops $\to$ 29.6 s, none)}
+% tags: oss cpp robotics perception sim
+% TODO: not on GitHub yet, so no link. Once exported to google-deepmind/mujoco,
+%   link the public commit here and in the Skills Open Source line.
+\defbullet{oss-mujoco-camera}{MuJoCo (C++): implemented a utility returning renderer-consistent pixel intrinsics for any camera and viewport}
 
 \begin{document}
 \begin{center}
@@ -165,8 +224,8 @@
         \usebullet{wing-rbac-license}
         \usebullet{wing-prober-sim}
         \usebullet{wing-tangy-sim}
-        \usebullet{wing-tangy-eval}
-        \usebullet{wing-gemini-tools}
+        \usebullet{wing-tangy-eval-360}
+        \usebullet{wing-llm-tools}
       \resumeItemListEnd
     \resumeSubheading{Software Engineer at Appen (fka Figure Eight)}{Oct 2021 -- Oct 2022}{Computer Vision Tools Team (Internal transfer from China)}{Sunnyvale, CA}
       \resumeItemListStart
@@ -181,7 +240,7 @@
       \resumeItemListEnd
     \resumeSubheading{Software Engineer at Works Applications}{Apr 2018 -- Mar 2019}{AI WORKS HUE Tech Lead Group}{Shanghai, China}
       \resumeItemListStart
-        \usebullet{works-erp}
+        \usebullet{works-erp-short}
       \resumeItemListEnd
     \resumeSubheading{Research Assistant at Academia Sinica}{Dec 2017 -- Mar 2018}{Natural Language Processing Lab}{Taipei, Taiwan}
       \resumeItemListStart
@@ -199,10 +258,17 @@
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}: C++, Python, Java, TypeScript/JavaScript \\
+     \textbf{Languages}: C++, Python, Java, JavaScript/TypeScript \\
      \textbf{Backend \& Data}: gRPC, Protocol Buffers, Spanner, Flume, Docker, GCP, AWS, Flask, Spring \\
-     \textbf{Robotics \& ML}: MuJoCo, Gemini Robotics-ER, Gemini API, PyTorch, NumPy, S2 Geometry, Three.js (WebGL) \\
-     \textbf{Tools \& Certification}: pytest, JUnit, Jest, Git, Jenkins, Google Antigravity; Google C++ Readability (2024)
+     \textbf{Robotics \& ML}: MuJoCo, ROS 2, Gemini Robotics-ER (VLM), LLM Evaluation \& Guardrails, PyTorch, NumPy, S2 Geometry, Three.js (WebGL) \\
+     \textbf{Tools \& Certification}: pytest, JUnit, Jest, Git, CMake, Jenkins, Google Antigravity; Google C++ Readability \\
+     % Open Source line alternates (keep; swap in when the layout allows):
+     %   Long, three projects (needs one more line than the page has):
+     %   \textbf{Open Source}: \href{https://github.com/gazebosim/gz-physics/pulls?q=author:alanwanga}{Gazebo gz-physics} (C++ MuJoCo plugin), \href{https://github.com/gazebosim/ros_gz/pulls?q=author:alanwanga}{Gazebo ros\_gz} (ROS 2), \href{https://github.com/open-rmf/rmf_traffic/pulls?q=author:alanwanga}{Open-RMF rmf\_traffic} (trajectory planning)
+     %   Short, three projects without MuJoCo (verified 1 page):
+     %   \textbf{Open Source}: \href{https://github.com/gazebosim/gz-physics/pulls?q=author:alanwanga}{Gazebo gz-physics} (C++ MuJoCo plugin), \href{https://github.com/gazebosim/ros_gz/pulls?q=author:alanwanga}{ros\_gz} (ROS 2), \href{https://github.com/open-rmf/rmf_traffic/pulls?q=author:alanwanga}{Open-RMF rmf\_traffic} (trajectory planning)
+     %   Short with MuJoCo (shown below; MuJoCo has no link until it is on GitHub):
+     \textbf{Open Source (C++)}: MuJoCo (camera intrinsics), \href{https://github.com/gazebosim/gz-physics/pulls?q=author:alanwanga}{Gazebo gz-physics}, \href{https://github.com/gazebosim/ros_gz/pulls?q=author:alanwanga}{ros\_gz}, \href{https://github.com/open-rmf/rmf_traffic/pulls?q=author:alanwanga}{Open-RMF rmf\_traffic}
     }}
  \end{itemize}
 \end{document}
