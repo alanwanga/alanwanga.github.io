@@ -32,6 +32,8 @@
 %     publicly verifiable or measured numbers.
 %   - Links: the Skills "Open Source" line links each project to
 %     pulls?q=author:alanwanga (all my PRs); each oss-* bullet links one PR.
+%     Context links: "UTM" in the Wing subheading -> https://www.nasa.gov/utm;
+%     "InterUSS" -> https://interussplatform.org/ (wing-llm-tools-linked).
 %   - MuJoCo counts as open source whether or not it has landed. Until it is on
 %     GitHub: generic name, no link, no unreleased API names, no wording that
 %     implies it shipped. After export: link the public commit (see TODO at
@@ -117,6 +119,8 @@
 \defbullet{wing-gemini-tools}{Built PoC Gemini-in-the-loop operator tools (models propose, deterministic checks + humans decide): schema-constrained 4D flight-restriction drafting and incident triage tested via time-cutoff replay}
 % tags: llm safety hri utm
 \defbullet{wing-llm-tools}{Built PoC LLM-in-the-loop operator tools (models propose, deterministic checks + humans decide): 4D flight-restriction drafting and incident triage (e.g. InterUSS deconfliction) tested via time-cutoff replay}
+% tags: llm safety hri utm
+\defbullet{wing-llm-tools-linked}{Built PoC LLM-in-the-loop operator tools (models propose, deterministic checks + humans decide): 4D flight-restriction drafting and incident triage (e.g. \href{https://interussplatform.org/}{InterUSS} deconfliction) tested via time-cutoff replay}
 % tags: backend auth data
 \defbullet{wing-rbac-license}{Led design (eng lead) of config-driven RBAC with per-RPC permission checks; owned the pilot License service and its dual-write Spanner migration without a maintenance window}
 
@@ -217,7 +221,7 @@
 \end{center}
 \section{Experience}
   \resumeSubHeadingListStart
-    \resumeSubheading{Software Engineer at Wing (Alphabet)}{Oct 2022 -- Present}{UAS (Uncrewed Aircraft Systems) Traffic Management (UTM) Team}{Palo Alto, CA}
+    \resumeSubheading{Software Engineer at Wing (Alphabet)}{Oct 2022 -- Present}{UAS (Uncrewed Aircraft Systems) Traffic Management (\href{https://www.nasa.gov/utm}{UTM}) Team}{Palo Alto, CA}
       \resumeItemListStart
         \usebullet{wing-oversight-hri}
         \usebullet{wing-s2-spatial}
@@ -225,7 +229,7 @@
         \usebullet{wing-prober-sim}
         \usebullet{wing-tangy-sim}
         \usebullet{wing-tangy-eval-360}
-        \usebullet{wing-llm-tools}
+        \usebullet{wing-llm-tools-linked}
       \resumeItemListEnd
     \resumeSubheading{Software Engineer at Appen (fka Figure Eight)}{Oct 2021 -- Oct 2022}{Computer Vision Tools Team (Internal transfer from China)}{Sunnyvale, CA}
       \resumeItemListStart
