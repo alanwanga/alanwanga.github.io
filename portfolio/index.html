@@ -86,6 +86,18 @@
           <p class="my-3 text-gray-300">Backend for the human-in-the-loop layer of Wing&rsquo;s autonomous drone delivery &mdash; the &ldquo;Google Maps for the sky&rdquo; where operators supervise and command autonomous aircraft and handle only the exceptions.</p>
           <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
           <p class="text-gray-300">Drone delivery must check every flight against spatial, temporal, and regulatory constraints, while enabling a single operator to safely oversee many aircraft at once.</p>
+          <div role="img" aria-label="Managing by exception: automated pre-flight and activation checks, then automatic pilot assignment, then alerts only on exceptions, so an operator oversees 10× aircraft per operator." class="bg-gray-900/40 border border-gray-700 rounded-md p-4 mt-4">
+            <p class="text-xs font-semibold text-gray-200">Managing by exception</p>
+            <div class="flex flex-col md:flex-row md:items-stretch gap-2 mt-3">
+              <div class="flex-1 rounded-md border border-gray-600 bg-gray-700/40 text-gray-200 text-xs px-3 py-2">Automated pre-flight &amp; activation checks</div>
+              <div class="self-center text-gray-500 text-xs" aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span></div>
+              <div class="flex-1 rounded-md border border-gray-600 bg-gray-700/40 text-gray-200 text-xs px-3 py-2">Automatic pilot assignment</div>
+              <div class="self-center text-gray-500 text-xs" aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span></div>
+              <div class="flex-1 rounded-md border border-gray-600 bg-gray-700/40 text-gray-200 text-xs px-3 py-2">Alerts only on exceptions</div>
+              <div class="self-center text-gray-500 text-xs" aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span></div>
+              <div class="flex-1 rounded-md border border-green-500/60 bg-green-500/10 text-green-200 text-xs px-3 py-2">Operator (<span class="font-semibold text-white">10× aircraft per operator</span>)</div>
+            </div>
+          </div>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">My Role</h4>
           <p class="text-gray-300">Main backend engineer for OpenSky&rsquo;s operator oversight system &mdash; building API handlers, 4D airspace validators, FAA rule types and data importers, the pilot License service, database migrations, and an end-to-end safety prober.</p>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Technical Work</h4>
@@ -102,6 +114,18 @@
             <li>Led an end-to-end blackbox prober that continuously exercises the emergency-landing command path on virtual aircraft in pre-production, asserting each state transition against deadlines; wrote the on-call debugging playbook that maps probe failures to causes, fixes, and owning teams.</li>
             <li>Rolled out transactional on-duty coverage updates to 100% of production via staged experiments; designed a dual-write Spanner license-table migration (without a maintenance window) and executed a phased, metrics-gated legacy API turndown.</li>
           </ul>
+          <div role="img" aria-label="Emergency-landing prober on virtual aircraft in pre-production: conflict reported, mission failed, contingency, landed, each step checked against a deadline." class="bg-gray-900/40 border border-gray-700 rounded-md p-4 mt-4">
+            <p class="text-xs font-semibold text-gray-200">Emergency-landing prober on virtual aircraft (pre-production)</p>
+            <div class="flex flex-col md:flex-row md:items-stretch gap-2 mt-3">
+              <div class="flex-1 rounded-md border border-gray-600 bg-gray-700/40 text-gray-200 text-xs px-3 py-2 text-center">Conflict reported<span class="block text-[10px] text-gray-500">deadline</span></div>
+              <div class="self-center text-gray-500 text-xs" aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span></div>
+              <div class="flex-1 rounded-md border border-gray-600 bg-gray-700/40 text-gray-200 text-xs px-3 py-2 text-center">Mission FAILED<span class="block text-[10px] text-gray-500">deadline</span></div>
+              <div class="self-center text-gray-500 text-xs" aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span></div>
+              <div class="flex-1 rounded-md border border-gray-600 bg-gray-700/40 text-gray-200 text-xs px-3 py-2 text-center">Contingency<span class="block text-[10px] text-gray-500">deadline</span></div>
+              <div class="self-center text-gray-500 text-xs" aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span></div>
+              <div class="flex-1 rounded-md border border-green-500/60 bg-green-500/10 text-green-200 text-xs px-3 py-2 text-center">Landed<span class="block text-[10px] text-gray-500">deadline</span></div>
+            </div>
+          </div>
           <a href="https://wing.com/opensky" target="_blank" rel="noopener noreferrer" class="block mt-6 rounded-md bg-gray-700 hover:bg-gray-600 transition p-6 text-center group">
             <span class="block text-white font-medium">OpenSky &mdash; Our Drone Airspace Platform</span>
             <span class="block text-sm text-gray-400 mt-1">wing.com/opensky &mdash; opens in a new tab &#8599;</span>
@@ -136,24 +160,183 @@
           <p class="text-gray-300">Vision-language models (VLMs) and large language models (LLMs) can translate open-ended mission descriptions into multi-drone task plans, but in a safety-critical airspace setting, a hallucinated or unsafe plan must never reach flight execution.</p>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">My Role</h4>
           <p class="text-gray-300">Co-built the original PoC (Three.js + Flask); independently rebuilt it end to end in MuJoCo with quadrotor physics, pixel-based perception, a deterministic Simplex safety layer, and an automated evaluation benchmark.</p>
+          <div role="img" aria-label="TAnGY architecture: the onboard detector and Gemini Robotics-ER see the scene, Gemini plans a task graph, deterministic code checks it and only checked paths fly, an onboard monitor can land the drone, a post-drop check verifies delivery, a human answers questions, and an offline 50 Hz auditor scores runs." class="bg-gray-900/40 border border-gray-700 rounded-md p-4 mt-4">
+            <svg viewBox="0 0 760 516" class="hidden md:block w-full h-auto" aria-hidden="true" font-family="inherit">
+              <title>TAnGY architecture: See, Plan, Check, Fly, Verify, with a human in the loop and an offline audit</title>
+              <defs>
+                <marker id="tg-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9ca3af" /></marker>
+                <marker id="tg-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fca5a5" /></marker>
+                <marker id="tg-gr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4ade80" /></marker>
+                <marker id="tg-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fbbf24" /></marker>
+                <marker id="tg-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280" /></marker>
+              </defs>
+                <rect x="10" y="34" width="200" height="112" rx="6" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.6)" stroke-width="1.5" />
+                <text x="22" y="58" fill="#bfdbfe" font-size="14" font-weight="600">1. See</text>
+                <text x="22" y="80" fill="#9ca3af" font-size="12">Onboard detector + Gemini</text>
+                <text x="22" y="97" fill="#9ca3af" font-size="12">Robotics-ER (pixels → 3D</text>
+                <text x="22" y="114" fill="#9ca3af" font-size="12">tracks)</text>
+                <rect x="280" y="34" width="200" height="112" rx="6" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.6)" stroke-width="1.5" />
+                <text x="292" y="58" fill="#bfdbfe" font-size="14" font-weight="600">2. Plan</text>
+                <text x="292" y="80" fill="#9ca3af" font-size="12">Gemini turns mission text</text>
+                <text x="292" y="97" fill="#9ca3af" font-size="12">into a task graph, or asks</text>
+                <rect x="550" y="34" width="200" height="112" rx="6" fill="rgba(34,197,94,0.1)" stroke="rgba(34,197,94,0.6)" stroke-width="1.5" />
+                <text x="562" y="58" fill="#bbf7d0" font-size="14" font-weight="600">3. Check</text>
+                <text x="562" y="80" fill="#9ca3af" font-size="12">Assigns drones, times paths;</text>
+                <text x="562" y="97" fill="#9ca3af" font-size="12">checks geofence, altitude,</text>
+                <text x="562" y="114" fill="#9ca3af" font-size="12">no-fly zones, separation,</text>
+                <text x="562" y="131" fill="#9ca3af" font-size="12">battery</text>
+                <rect x="10" y="214" width="200" height="112" rx="6" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.6)" stroke-width="1.5" />
+                <text x="22" y="238" fill="#fde68a" font-size="14" font-weight="600">Human</text>
+                <text x="22" y="260" fill="#9ca3af" font-size="12">Answers questions or</text>
+                <text x="22" y="277" fill="#9ca3af" font-size="12">aborts; replies pass the</text>
+                <text x="22" y="294" fill="#9ca3af" font-size="12">same checks</text>
+                <rect x="280" y="214" width="200" height="112" rx="6" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.6)" stroke-width="1.5" />
+                <text x="292" y="238" fill="#bfdbfe" font-size="14" font-weight="600">5. Verify</text>
+                <text x="292" y="260" fill="#9ca3af" font-size="12">Post-drop photo check;</text>
+                <text x="292" y="277" fill="#9ca3af" font-size="12">a miss alerts the human</text>
+                <rect x="550" y="214" width="200" height="112" rx="6" fill="rgba(34,197,94,0.1)" stroke="rgba(34,197,94,0.6)" stroke-width="1.5" />
+                <text x="562" y="238" fill="#bbf7d0" font-size="14" font-weight="600">4. Fly (onboard)</text>
+                <text x="562" y="260" fill="#9ca3af" font-size="12">Runtime monitor can land</text>
+                <text x="562" y="277" fill="#9ca3af" font-size="12">the drone at any tick, no</text>
+                <text x="562" y="294" fill="#9ca3af" font-size="12">cloud link</text>
+                <rect x="550" y="394" width="200" height="112" rx="6" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 4" />
+                <text x="562" y="418" fill="#d1d5db" font-size="14" font-weight="600">6. Audit (offline)</text>
+                <text x="562" y="440" fill="#9ca3af" font-size="12">Independent 50 Hz auditor</text>
+                <text x="562" y="457" fill="#9ca3af" font-size="12">on simulator ground truth;</text>
+                <text x="562" y="474" fill="#9ca3af" font-size="12">shares zero code with</text>
+                <text x="562" y="491" fill="#9ca3af" font-size="12">the checker</text>
+                <line x1="210" y1="90" x2="276" y2="90" stroke="#9ca3af" stroke-width="2" marker-end="url(#tg-g)" />
+                <line x1="484" y1="90" x2="546" y2="90" stroke="#fca5a5" stroke-width="2" marker-start="url(#tg-r)" marker-end="url(#tg-r)" />
+                <text x="515" y="22" fill="#fca5a5" font-size="12.5" text-anchor="middle">violations (≤ 3 rounds)</text>
+                <line x1="650" y1="146" x2="650" y2="210" stroke="#4ade80" stroke-width="2" marker-end="url(#tg-gr)" />
+                <text x="640" y="184" fill="#4ade80" font-size="12.5" text-anchor="end">only checked paths fly</text>
+                <line x1="550" y1="270" x2="484" y2="270" stroke="#9ca3af" stroke-width="2" marker-end="url(#tg-g)" />
+                <line x1="280" y1="270" x2="214" y2="270" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#tg-a)" />
+                <line x1="310" y1="150" x2="180" y2="210" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6 4" marker-start="url(#tg-a)" marker-end="url(#tg-a)" />
+                <text x="176" y="184" fill="#fbbf24" font-size="12.5" text-anchor="end">asks / replies</text>
+                <line x1="650" y1="326" x2="650" y2="390" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#tg-d)" />
+                <text x="640" y="364" fill="#9ca3af" font-size="12.5" text-anchor="end">ground truth</text>
+            </svg>
+            <div class="md:hidden space-y-1" aria-hidden="true">
+              <div class="rounded-md border border-blue-500/60 bg-blue-500/10 text-blue-200 px-3 py-2"><p class="text-xs font-semibold">1. See</p><p class="text-xs text-gray-400">Onboard detector + Gemini Robotics-ER (pixels → 3D tracks)</p></div>
+              <p class="text-center text-xs text-gray-400">↓</p>
+              <div class="rounded-md border border-blue-500/60 bg-blue-500/10 text-blue-200 px-3 py-2"><p class="text-xs font-semibold">2. Plan</p><p class="text-xs text-gray-400">Gemini turns mission text into a task graph, or asks</p></div>
+              <p class="text-center text-xs text-red-300">↕ violations (≤ 3 rounds)</p>
+              <div class="rounded-md border border-green-500/60 bg-green-500/10 text-green-200 px-3 py-2"><p class="text-xs font-semibold">3. Check</p><p class="text-xs text-gray-400">Assigns drones, times paths; checks geofence, altitude, no-fly zones, separation, battery</p></div>
+              <p class="text-center text-xs text-green-400">↓ only checked paths fly</p>
+              <div class="rounded-md border border-green-500/60 bg-green-500/10 text-green-200 px-3 py-2"><p class="text-xs font-semibold">4. Fly (onboard)</p><p class="text-xs text-gray-400">Runtime monitor can land the drone at any tick, no cloud link</p></div>
+              <p class="text-center text-xs text-gray-400">↓</p>
+              <div class="rounded-md border border-blue-500/60 bg-blue-500/10 text-blue-200 px-3 py-2"><p class="text-xs font-semibold">5. Verify</p><p class="text-xs text-gray-400">Post-drop photo check; a miss alerts the human</p></div>
+              <p class="text-center text-xs text-amber-300">↓</p>
+              <div class="rounded-md border border-amber-500/60 bg-amber-500/10 text-amber-200 px-3 py-2"><p class="text-xs font-semibold">Human</p><p class="text-xs text-gray-400">Answers questions or aborts; replies pass the same checks</p></div>
+              <p class="text-center text-xs text-amber-300">↕ asks / replies (2. Plan)</p>
+              <p class="text-center text-xs text-gray-400">4. Fly ┆ ground truth ↓</p>
+              <div class="rounded-md border border-dashed border-gray-500 text-gray-300 px-3 py-2"><p class="text-xs font-semibold">6. Audit (offline)</p><p class="text-xs text-gray-400">Independent 50 Hz auditor on simulator ground truth; shares zero code with the checker</p></div>
+            </div>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs text-gray-400">
+              <span class="inline-flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-sm border border-blue-500/60 bg-blue-500/10"></span>Gemini: proposes (untrusted)</span>
+              <span class="inline-flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-sm border border-green-500/60 bg-green-500/10"></span>Deterministic code: can always override</span>
+              <span class="inline-flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-sm border border-amber-500/60 bg-amber-500/10"></span>Human: answers questions</span>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 mt-2">Gemini decides what (a task graph); deterministic code decides how and what may fly. Every model stage is benchmarked against an oracle baseline.</p>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Technical Work</h4>
           <ul class="list-disc pl-5 space-y-1 text-gray-300">
-            <li>Simplex architecture: Gemini turns mission text and scene tracks into a task graph; deterministic code assigns drones, times trajectories, and checks geofence, altitude, no-fly zones, separation, and battery &mdash; routing violations back to Gemini (up to 3 rounds) and then to a human operator under the same checks.</li>
             <li>Perception from pixels: Gemini Robotics-ER points at objects in simulated RGB-D camera frames; points are back-projected with depth and tracked via a Kalman filter with Hungarian association (recall 0.80&ndash;0.82 at precision 0.95&ndash;0.96).</li>
-            <li>Robotics VLM vs. general-purpose model: on the same 24 simulated frames, Gemini Robotics-ER outperformed general-purpose Gemini Flash on five-class detection (recall/precision 0.80&ndash;0.82 / 0.95&ndash;0.96 vs. 0.60 / 0.77) with zero frame-budget timeouts (0 vs. 6 of 24); simple planning tasks did not separate them.</li>
-            <li>Simplex ablation under live Gemini planning: with all safety layers on, 0 of 30 runs violated a constraint; with the plan validator off, the onboard monitor braked every unsafe flight; with both off, 4 of 30 runs entered a no-fly zone or left the geofence. All violations came from refusal tasks, so this shows what each layer catches, not how often plans are unsafe.</li>
             <li>Robustness: across three seeded scene layouts, VLM-grounded planning succeeded on 29 of 30 runs; with walking bystanders, live Gemini runs succeeded 18 of 18 with 0 violations; under random mid-cruise gusts, 120 runs had 0 geofence, no-fly, or separation violations.</li>
             <li>Flight control &amp; onboard monitor: geometric SE(3) controller settles a 1 m step in 1.6 s and holds hover within 1 cm under a 2 N side wind; an independent onboard monitor runs every tick to land the drone without relying on cloud connectivity.</li>
-            <li>Independent ground-truth audit: a 50 Hz auditor sharing zero code with the planner checker scores safety violations against simulator state, and every model stage is benchmarked against an oracle baseline.</li>
             <li>(Original PoC) Text descriptions generate custom 3D test scenes.</li>
             <li>(Original PoC) Logs commands, reasoning, actions, and feedback as episodes for a reinforcement-learning dataset.</li>
             <li>Related open-source work: a MuJoCo camera-intrinsics utility and Gazebo MuJoCo plugin PRs (see Open Source below).</li>
           </ul>
+          <div role="img" aria-label="On the same 24 simulated frames, Gemini Robotics-ER scored recall 0.80–0.82 and precision 0.95–0.96 with 0 of 24 frame-budget timeouts, versus Gemini Flash at recall 0.60, precision 0.77, and 6 of 24 timeouts." class="bg-gray-900/40 border border-gray-700 rounded-md p-4 mt-4">
+            <p class="text-xs font-semibold text-gray-200">Robotics VLM vs. general-purpose model (same 24 simulated frames, five-class detection)</p>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-gray-400">
+              <span class="inline-flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-sm bg-blue-500"></span>Gemini Robotics-ER</span>
+              <span class="inline-flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-sm bg-gray-400"></span>Gemini Flash</span>
+            </div>
+            <div class="mt-3">
+              <p class="text-xs text-gray-300">Recall</p>
+              <div class="flex items-center gap-2 mt-1">
+                <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-blue-500" style="width: 82%"></div></div>
+                <span class="w-20 shrink-0 text-right text-xs text-blue-200">0.80–0.82</span>
+              </div>
+              <div class="flex items-center gap-2 mt-1">
+                <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-gray-400" style="width: 60%"></div></div>
+                <span class="w-20 shrink-0 text-right text-xs text-gray-300">0.60</span>
+              </div>
+            </div>
+            <div class="mt-3">
+              <p class="text-xs text-gray-300">Precision</p>
+              <div class="flex items-center gap-2 mt-1">
+                <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-blue-500" style="width: 96%"></div></div>
+                <span class="w-20 shrink-0 text-right text-xs text-blue-200">0.95–0.96</span>
+              </div>
+              <div class="flex items-center gap-2 mt-1">
+                <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-gray-400" style="width: 77%"></div></div>
+                <span class="w-20 shrink-0 text-right text-xs text-gray-300">0.77</span>
+              </div>
+            </div>
+            <div class="mt-3">
+              <p class="text-xs text-gray-300">Frame-budget timeouts</p>
+              <div class="flex items-center gap-2 mt-1">
+                <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-blue-500" style="width: 0%"></div></div>
+                <span class="w-20 shrink-0 text-right text-xs text-blue-200">0 / 24</span>
+              </div>
+              <div class="flex items-center gap-2 mt-1">
+                <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-gray-400" style="width: 25%"></div></div>
+                <span class="w-20 shrink-0 text-right text-xs text-gray-300">6 / 24</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 mt-2">Simple planning tasks did not separate the two models.</p>
+          <div role="img" aria-label="Simplex ablation, 30 runs per arm: with all safety layers on, 0 of 30 violations; with the plan validator off, the onboard monitor braked every unsafe flight; with both layers off, 4 of 30 entered a no-fly zone or left the geofence." class="bg-gray-900/40 border border-gray-700 rounded-md p-4 mt-4">
+            <p class="text-xs font-semibold text-gray-200">Simplex ablation under live Gemini planning (30 runs per arm)</p>
+            <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pt-3 mt-3">
+              <div class="md:w-64 shrink-0">
+                <p class="text-xs font-semibold text-gray-200">All safety layers on</p>
+                <p class="flex flex-wrap gap-x-3 gap-y-1 mt-1 text-[11px] text-gray-400"><span class="inline-flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm bg-green-500"></span>Plan validator</span> <span class="inline-flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm bg-green-500"></span>Onboard monitor</span></p>
+              </div>
+              <p class="text-xs font-semibold text-green-300">0 / 30 violations</p>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pt-3 mt-3 border-t border-gray-700/60">
+              <div class="md:w-64 shrink-0">
+                <p class="text-xs font-semibold text-gray-200">Plan validator off</p>
+                <p class="flex flex-wrap gap-x-3 gap-y-1 mt-1 text-[11px] text-gray-400"><span class="inline-flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm border border-gray-500"></span>Plan validator</span> <span class="inline-flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm bg-green-500"></span>Onboard monitor</span></p>
+              </div>
+              <p class="text-xs font-semibold text-green-300">Onboard monitor braked every unsafe flight</p>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pt-3 mt-3 border-t border-gray-700/60">
+              <div class="md:w-64 shrink-0">
+                <p class="text-xs font-semibold text-gray-200">Both layers off</p>
+                <p class="flex flex-wrap gap-x-3 gap-y-1 mt-1 text-[11px] text-gray-400"><span class="inline-flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm border border-gray-500"></span>Plan validator</span> <span class="inline-flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm border border-gray-500"></span>Onboard monitor</span></p>
+              </div>
+              <p class="text-xs font-semibold text-red-300">4 / 30 entered a no-fly zone or left the geofence</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 mt-2">All violations came from refusal tasks, so this shows what each layer catches, not how often plans are unsafe.</p>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Impact</h4>
           <ul class="list-disc pl-5 space-y-1 text-gray-300">
             <li><strong class="text-white">0 safety violations</strong> across 300 adversarial plans, 8 adversarial physics episodes, and 360 benchmark runs.</li>
             <li><strong class="text-white">20/20 end-to-end simulated missions</strong> (live Gemini calls) delivered the payload to the right target; on a 10-task benchmark suite (3 runs per task), Gemini Robotics-ER planning improved from <strong class="text-white">12/30 to 30/30</strong> once the planner saw the scene (annotated scout image, own drones masked, targets described by color).</li>
           </ul>
+          <div role="img" aria-label="Scene-grounded planning on a 10-task suite with 3 runs per task: 12 of 30 with class labels only, 30 of 30 with an annotated scout image." class="bg-gray-900/40 border border-gray-700 rounded-md p-4 mt-4">
+            <p class="text-xs font-semibold text-gray-200">Scene-grounded planning (10-task suite, 3 runs per task)</p>
+            <div class="mt-3">
+              <p class="text-xs text-gray-300">Class labels only</p>
+              <div class="flex items-center gap-2 mt-1">
+                <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-gray-400" style="width: 40%"></div></div>
+                <span class="w-20 shrink-0 text-right text-xs text-gray-300">12 / 30</span>
+              </div>
+            </div>
+            <div class="mt-3">
+              <p class="text-xs text-gray-300">+ annotated scout image</p>
+              <div class="flex items-center gap-2 mt-1">
+                <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-green-500" style="width: 100%"></div></div>
+                <span class="w-20 shrink-0 text-right text-xs text-green-300">30 / 30</span>
+              </div>
+            </div>
+          </div>
         </div>
 
 
@@ -173,6 +356,30 @@
           <p class="my-3 text-gray-300">Authorization for human-in-the-loop operations &mdash; re-architected access control so every RPC, including emergency landing, checks who may issue it, moving from database-persisted roles mirrored into an ACL service to config-driven RBAC.</p>
           <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
           <p class="text-gray-300">The legacy authorization flow persisted per-organization roles in the database and synced them asynchronously into a Zanzibar-based group-membership service. The sync could drift, and adding a role required handler changes, a backfill, and a re-sync &mdash; all while live airspace operations could not be interrupted.</p>
+          <div role="img" aria-label="Before: per-org roles in the database were synced asynchronously to an ACL service and could drift. After: a global role config plus per-RPC permissions, checked with one keyed membership read and an in-memory check." class="bg-gray-900/40 border border-gray-700 rounded-md p-4 mt-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <p class="text-xs font-semibold text-gray-200">Before</p>
+                <div class="flex flex-col lg:flex-row lg:items-center gap-2 mt-2">
+                  <div class="flex-1 rounded-md border border-gray-600 bg-gray-700/40 text-gray-200 text-xs px-3 py-2">Per-org roles in DB</div>
+                <div class="flex lg:flex-col items-center justify-center gap-1 text-red-300" aria-hidden="true"><span class="lg:hidden">↓</span><span class="text-[11px]">async sync, can drift</span><span class="hidden lg:flex items-center"><span class="w-12 border-t-2 border-dashed border-red-400"></span><span class="text-xs -ml-1">▶</span></span></div>
+                  <div class="flex-1 rounded-md border border-gray-600 bg-gray-700/40 text-gray-200 text-xs px-3 py-2">ACL service</div>
+                </div>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-gray-200">After</p>
+                <div class="flex flex-col lg:flex-row lg:items-center gap-2 mt-2">
+                  <div class="flex-1 flex flex-col gap-1">
+                    <div class="flex-1 rounded-md border border-green-500/60 bg-green-500/10 text-green-200 text-xs px-3 py-2">Global role config</div>
+                    <p class="text-center text-xs text-green-300">+</p>
+                    <div class="flex-1 rounded-md border border-green-500/60 bg-green-500/10 text-green-200 text-xs px-3 py-2">Per-RPC permission</div>
+                  </div>
+                <div class="flex lg:flex-col items-center justify-center gap-1 text-green-300" aria-hidden="true"><span class="lg:hidden">↓</span><span class="hidden lg:flex items-center"><span class="w-12 border-t-2 border-solid border-green-400"></span><span class="text-xs -ml-1">▶</span></span></div>
+                  <div class="flex-1 rounded-md border border-green-500/60 bg-green-500/10 text-green-200 text-xs px-3 py-2">One keyed membership read + in-memory check</div>
+                </div>
+              </div>
+            </div>
+          </div>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">My Role</h4>
           <p class="text-gray-300">Eng lead and co-author of the redesign; led the role-configuration schema, validation, and phased migration plan.</p>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Technical Work</h4>
@@ -206,11 +413,11 @@
           <div class="flex flex-col sm:flex-row justify-center items-start gap-6 mt-4">
             <figure class="flex flex-col items-center">
               <img src="./3D.gif" alt="Demo: clicking to select a region in a LiDAR point cloud generates a 3D bounding box via DBSCAN clustering" loading="lazy" class="h-52 sm:h-64 w-auto max-w-full rounded-lg shadow-md" />
-              <figcaption class="text-xs text-gray-500 mt-2 text-center sm:whitespace-nowrap">AI-assisted cuboid annotation: click to select &rarr; DBSCAN &rarr; 3D bounding box</figcaption>
+              <figcaption class="text-xs text-gray-500 mt-2 text-center">AI-assisted cuboid annotation: click to select &rarr; DBSCAN &rarr; 3D bounding box</figcaption>
             </figure>
             <figure class="flex flex-col items-center">
               <img src="./4D.gif" alt="Demo: 4D point-cloud semantic segmentation across a full LiDAR sequence" loading="lazy" class="h-52 sm:h-64 w-auto max-w-full rounded-lg shadow-md" />
-              <figcaption class="text-xs text-gray-500 mt-2 text-center sm:whitespace-nowrap">4D semantic segmentation: labeling every point across 3D space + time</figcaption>
+              <figcaption class="text-xs text-gray-500 mt-2 text-center">4D semantic segmentation: labeling every point across 3D space + time</figcaption>
             </figure>
           </div>
           <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
