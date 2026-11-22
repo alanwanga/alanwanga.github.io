@@ -24,9 +24,9 @@
       <p class="text-gray-400 text-sm mt-4">Human-in-the-loop oversight &middot; Safety-critical backends &middot; Simulation &amp; evaluation for robotics</p>
       <p class="text-gray-400 mt-2 max-w-2xl">Building safety-critical backends, simulation &amp; evaluation harnesses, and 3D perception tooling that keep humans in control of autonomous systems.</p>
       <div class="flex flex-wrap gap-3 mt-5">
-        <a href="https://alanwanga.github.io/TaoyuanWang_resume.pdf" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 transition text-white text-sm font-semibold px-5 py-2.5 rounded-lg">Resume</a>
-        <a href="https://www.linkedin.com/in/taoyuanwang" target="_blank" rel="noopener noreferrer" class="border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition text-gray-200 text-sm font-medium px-5 py-2.5 rounded-lg">LinkedIn</a>
-        <a href="https://github.com/alanwanga" target="_blank" rel="noopener noreferrer" class="border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition text-gray-200 text-sm font-medium px-5 py-2.5 rounded-lg">GitHub</a>
+        <a href="https://alanwanga.github.io/TaoyuanWang_resume.pdf" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 transition text-white text-sm font-semibold px-5 py-2.5 rounded-lg max-sm:py-3">Resume</a>
+        <a href="https://www.linkedin.com/in/taoyuanwang" target="_blank" rel="noopener noreferrer" class="border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition text-gray-200 text-sm font-medium px-5 py-2.5 rounded-lg max-sm:py-3">LinkedIn</a>
+        <a href="https://github.com/alanwanga" target="_blank" rel="noopener noreferrer" class="border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition text-gray-200 text-sm font-medium px-5 py-2.5 rounded-lg max-sm:py-3">GitHub</a>
       </div>
     </header>
 
@@ -73,7 +73,7 @@
         <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
           <p class="text-xs font-semibold tracking-widest text-gray-500 mb-2">01</p>
           <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="text-xl font-bold text-white">Autonomous Aviation Infrastructure</h3>
+            <h3 class="max-sm:[text-wrap:balance] text-xl font-bold text-white">Autonomous Aviation Infrastructure</h3>
             <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Wing</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-3">
@@ -158,7 +158,7 @@
         <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
           <p class="text-xs font-semibold tracking-widest text-gray-500 mb-2">02</p>
           <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="text-xl font-bold text-white">TAnGY: Gemini-Planned Multi-Drone Delivery in Simulation</h3>
+            <h3 class="max-sm:[text-wrap:balance] text-xl font-bold text-white">TAnGY: Gemini-Planned Multi-Drone Delivery in Simulation</h3>
             <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Wing</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-3">
@@ -247,7 +247,7 @@
               <p class="text-center text-xs text-amber-300">↓</p>
               <div class="rounded-md border border-amber-500/60 bg-amber-500/10 text-amber-200 px-3 py-2"><p class="text-xs font-semibold">Human</p><p class="text-xs text-gray-400">Answers questions or aborts; replies pass the same checks</p></div>
               <div class="border-t border-dashed border-gray-600 !mt-3 !mb-3"></div>
-              <div class="rounded-md border border-dashed border-gray-500 text-gray-300 px-3 py-2"><p class="text-xs font-semibold">6. Audit (offline)</p><p class="text-xs text-gray-400">Independent 50 Hz auditor on simulator ground truth; shares zero code with the checker</p></div>
+              <div class="rounded-md border border-dashed border-gray-500 text-gray-300 px-3 py-2"><p class="text-xs font-semibold">6. Audit (offline)</p><p class="text-xs text-gray-400">Independent 50&nbsp;Hz auditor on simulator ground truth; shares zero code with the checker</p></div>
             </div>
             <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs text-gray-400">
               <span class="inline-flex items-center gap-1.5"><span class="inline-block w-3 h-3 rounded-sm border border-blue-500/60 bg-blue-500/10"></span>Gemini: proposes (untrusted)</span>
@@ -260,7 +260,7 @@
           <ul class="list-disc pl-5 space-y-1 text-gray-300">
             <li>Perception from pixels: Gemini Robotics-ER points at objects in simulated RGB-D camera frames; points are back-projected with depth and tracked via a Kalman filter with Hungarian association (recall 0.80&ndash;0.82 at precision 0.95&ndash;0.96).</li>
             <li>Robustness: across three seeded scene layouts, VLM-grounded planning succeeded on 29 of 30 runs; with walking bystanders, live Gemini runs succeeded 18 of 18 with 0 violations; under random mid-cruise gusts, 120 runs had 0 geofence, no-fly, or separation violations.</li>
-            <li>Flight control &amp; onboard monitor: geometric SE(3) controller settles a 1 m step in 1.6 s and holds hover within 1 cm under a 2 N side wind; an independent onboard monitor runs every tick to land the drone without relying on cloud connectivity.</li>
+            <li>Flight control &amp; onboard monitor: geometric SE(3) controller settles a 1&nbsp;m step in 1.6&nbsp;s and holds hover within 1&nbsp;cm under a 2&nbsp;N side wind; an independent onboard monitor runs every tick to land the drone without relying on cloud connectivity.</li>
             <li>(Original PoC) Text descriptions generate custom 3D test scenes; commands, reasoning, actions, and feedback are logged as episodes for a reinforcement-learning dataset.</li>
           </ul>
           <div role="img" aria-label="On the same 24 simulated frames, Gemini Robotics-ER scored recall 0.80–0.82 and precision 0.95–0.96 with 0 of 24 frame-budget timeouts, versus Gemini Flash at recall 0.60, precision 0.77, and 6 of 24 timeouts." class="bg-gray-900/40 border border-gray-700 rounded-md p-4 mt-4">
@@ -273,33 +273,33 @@
               <p class="text-xs text-gray-300">Recall</p>
               <div class="flex items-center gap-2 mt-1">
                 <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-blue-500" style="width: 82%"></div></div>
-                <span class="w-20 shrink-0 text-right text-xs text-blue-200">0.80–0.82</span>
+                <span class="w-20 shrink-0 whitespace-nowrap text-right text-xs text-blue-200">0.80–0.82</span>
               </div>
               <div class="flex items-center gap-2 mt-1">
                 <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-gray-400" style="width: 60%"></div></div>
-                <span class="w-20 shrink-0 text-right text-xs text-gray-300">0.60</span>
+                <span class="w-20 shrink-0 whitespace-nowrap text-right text-xs text-gray-300">0.60</span>
               </div>
             </div>
             <div class="mt-3">
               <p class="text-xs text-gray-300">Precision</p>
               <div class="flex items-center gap-2 mt-1">
                 <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-blue-500" style="width: 96%"></div></div>
-                <span class="w-20 shrink-0 text-right text-xs text-blue-200">0.95–0.96</span>
+                <span class="w-20 shrink-0 whitespace-nowrap text-right text-xs text-blue-200">0.95–0.96</span>
               </div>
               <div class="flex items-center gap-2 mt-1">
                 <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-gray-400" style="width: 77%"></div></div>
-                <span class="w-20 shrink-0 text-right text-xs text-gray-300">0.77</span>
+                <span class="w-20 shrink-0 whitespace-nowrap text-right text-xs text-gray-300">0.77</span>
               </div>
             </div>
             <div class="mt-3">
               <p class="text-xs text-gray-300">Frame-budget timeouts</p>
               <div class="flex items-center gap-2 mt-1">
                 <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-blue-500" style="width: 0%"></div></div>
-                <span class="w-20 shrink-0 text-right text-xs text-blue-200">0 / 24</span>
+                <span class="w-20 shrink-0 whitespace-nowrap text-right text-xs text-blue-200">0&nbsp;/&nbsp;24</span>
               </div>
               <div class="flex items-center gap-2 mt-1">
                 <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-gray-400" style="width: 25%"></div></div>
-                <span class="w-20 shrink-0 text-right text-xs text-gray-300">6 / 24</span>
+                <span class="w-20 shrink-0 whitespace-nowrap text-right text-xs text-gray-300">6&nbsp;/&nbsp;24</span>
               </div>
             </div>
           </div>
@@ -311,7 +311,7 @@
                 <p class="text-xs font-semibold text-gray-200">All safety layers on</p>
                 <p class="flex flex-wrap gap-x-3 gap-y-1 mt-1 text-[11px] text-gray-400"><span class="inline-flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm bg-green-500"></span>Plan validator</span> <span class="inline-flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm bg-green-500"></span>Onboard monitor</span></p>
               </div>
-              <p class="text-xs font-semibold text-green-300">0 / 30 violations</p>
+              <p class="text-xs font-semibold text-green-300">0&nbsp;/&nbsp;30 violations</p>
             </div>
             <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 pt-3 mt-3 border-t border-gray-700/60">
               <div class="md:w-64 shrink-0">
@@ -325,7 +325,7 @@
                 <p class="text-xs font-semibold text-gray-200">Both layers off</p>
                 <p class="flex flex-wrap gap-x-3 gap-y-1 mt-1 text-[11px] text-gray-400"><span class="inline-flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm border border-gray-500"></span>Plan validator</span> <span class="inline-flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm border border-gray-500"></span>Onboard monitor</span></p>
               </div>
-              <p class="text-xs font-semibold text-red-300">4 / 30 entered a no-fly zone or left the geofence</p>
+              <p class="text-xs font-semibold text-red-300">4&nbsp;/&nbsp;30 entered a no-fly zone or left the geofence</p>
             </div>
           </div>
           <p class="text-xs text-gray-400 mt-2">All violations came from refusal tasks, so this shows what each layer catches, not how often plans are unsafe.</p>
@@ -340,14 +340,14 @@
               <p class="text-xs text-gray-300">Class labels only</p>
               <div class="flex items-center gap-2 mt-1">
                 <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-gray-400" style="width: 40%"></div></div>
-                <span class="w-20 shrink-0 text-right text-xs text-gray-300">12 / 30</span>
+                <span class="w-20 shrink-0 whitespace-nowrap text-right text-xs text-gray-300">12&nbsp;/&nbsp;30</span>
               </div>
             </div>
             <div class="mt-3">
               <p class="text-xs text-gray-300">+ annotated scout image (own drones masked, targets described by color)</p>
               <div class="flex items-center gap-2 mt-1">
                 <div class="flex-1 h-3 rounded bg-gray-700/40"><div class="h-3 rounded bg-green-500" style="width: 100%"></div></div>
-                <span class="w-20 shrink-0 text-right text-xs text-green-300">30 / 30</span>
+                <span class="w-20 shrink-0 whitespace-nowrap text-right text-xs text-green-300">30&nbsp;/&nbsp;30</span>
               </div>
             </div>
           </div>
@@ -357,7 +357,7 @@
         <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
           <p class="text-xs font-semibold tracking-widest text-gray-500 mb-2">03</p>
           <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="text-xl font-bold text-white">Safety-Critical Configuration &amp; Authorization</h3>
+            <h3 class="max-sm:[text-wrap:balance] text-xl font-bold text-white">Safety-Critical Configuration &amp; Authorization</h3>
             <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Wing</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-3">
@@ -413,7 +413,7 @@
         <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
           <p class="text-xs font-semibold tracking-widest text-gray-500 mb-2">04</p>
           <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="text-xl font-bold text-white">3D Perception &amp; Annotation Platform</h3>
+            <h3 class="max-sm:[text-wrap:balance] text-xl font-bold text-white">3D Perception &amp; Annotation Platform</h3>
             <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Appen</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-3">
@@ -427,11 +427,11 @@
           <div class="flex flex-col sm:flex-row justify-center items-start gap-6 mt-4">
             <figure class="flex flex-col items-center">
               <img src="./3D.gif" alt="Demo: clicking to select a region in a LiDAR point cloud generates a 3D bounding box via DBSCAN clustering" loading="lazy" class="h-52 sm:h-64 w-auto max-w-full rounded-lg shadow-md" />
-              <figcaption class="text-xs text-gray-500 mt-2 text-center">AI-assisted cuboid annotation: click &rarr; DBSCAN &rarr; 3D bounding box</figcaption>
+              <figcaption class="max-sm:[text-wrap:balance] text-xs text-gray-500 mt-2 text-center">AI-assisted cuboid annotation: click &rarr; DBSCAN &rarr; 3D bounding box</figcaption>
             </figure>
             <figure class="flex flex-col items-center">
               <img src="./4D.gif" alt="Demo: 4D point-cloud semantic segmentation across a full LiDAR sequence" loading="lazy" class="h-52 sm:h-64 w-auto max-w-full rounded-lg shadow-md" />
-              <figcaption class="text-xs text-gray-500 mt-2 text-center">4D semantic segmentation: labeling every point across 3D space + time</figcaption>
+              <figcaption class="max-sm:[text-wrap:balance] text-xs text-gray-500 mt-2 text-center">4D semantic segmentation: labeling every point across 3D space + time</figcaption>
             </figure>
           </div>
           <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
@@ -467,7 +467,7 @@
         <p class="text-gray-400">Contributions to robotics simulation and multi-robot traffic projects. Each card links to the pull request with the code and review.</p>
         <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
           <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="text-xl font-bold text-white">ros_gz: Clean Shutdown of the Gazebo Simulation Interfaces</h3>
+            <h3 class="max-sm:[text-wrap:balance] text-xl font-bold text-white">ros_gz: Clean Shutdown of the Gazebo Simulation Interfaces</h3>
             <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Gazebo</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-3">
@@ -479,7 +479,7 @@
           <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
           <p class="text-gray-300">The <code>GzServer</code> ROS 2 component initialized its simulation interfaces in a detached thread that could wait several seconds for Gazebo. Shutting the component down during that window (e.g. Ctrl+C right after startup) destroyed the interfaces while the thread was still running, so the node and the rclcpp context stayed alive until exit and the thread could touch freed memory.</p>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Fix</h4>
-          <p class="text-gray-300">Joined the thread in the destructor instead of detaching it, and added a stop flag so the waits for Gazebo end early on shutdown, plus a regression test that fails without the fix. With Ctrl+C 1&ndash;2 s after startup, the rclcpp context&apos;s use count at exit dropped from 3 to 1; normal startup is unchanged.</p>
+          <p class="text-gray-300">Joined the thread in the destructor instead of detaching it, and added a stop flag so the waits for Gazebo end early on shutdown, plus a regression test that fails without the fix. With Ctrl+C 1&ndash;2&nbsp;s after startup, the rclcpp context&apos;s use count at exit dropped from 3 to 1; normal startup is unchanged.</p>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Why It Matters</h4>
           <p class="text-gray-300">Composable ROS 2 nodes are loaded and unloaded inside long-running containers; a thread that outlives its component leaks the context and can touch freed memory in a process that keeps running.</p>
           <p class="mt-4"><a href="https://github.com/gazebosim/ros_gz/pull/1039" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-medium">gazebosim/ros_gz #1039 &rarr;</a></p>
@@ -487,7 +487,7 @@
 
         <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
           <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="text-xl font-bold text-white">gz-physics MuJoCo Plugin: Nested-Model Removal</h3>
+            <h3 class="max-sm:[text-wrap:balance] text-xl font-bold text-white">gz-physics MuJoCo Plugin: Nested-Model Removal</h3>
             <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Gazebo</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-3">
@@ -507,7 +507,7 @@
 
         <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
           <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="text-xl font-bold text-white">gz-physics MuJoCo Plugin: Reject Cross-World Constraints</h3>
+            <h3 class="max-sm:[text-wrap:balance] text-xl font-bold text-white">gz-physics MuJoCo Plugin: Reject Cross-World Constraints</h3>
             <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Gazebo</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-3">
@@ -527,7 +527,7 @@
 
         <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
           <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="text-xl font-bold text-white">Open-RMF rmf_traffic: Per-Lane Speed Limits</h3>
+            <h3 class="max-sm:[text-wrap:balance] text-xl font-bold text-white">Open-RMF rmf_traffic: Per-Lane Speed Limits</h3>
             <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">Open-RMF</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-3">
@@ -537,9 +537,9 @@
             <span class="text-xs px-2.5 py-1 rounded-full border border-gray-700 text-gray-400">Testing</span>
           </div>
           <h4 class="text-sm font-bold text-white mt-5 mb-1">Problem</h4>
-          <p class="text-gray-300">When collinear lanes were merged into one traversal, the whole stretch was capped at the lowest speed limit; on longer corridors the planner instead chained single-lane traversals that each start and end at rest. With three 5 m lanes limited to 1.0 / 0.3 / 1.0 m/s, the robot stopped twice and took 31.3 s.</p>
+          <p class="text-gray-300">When collinear lanes were merged into one traversal, the whole stretch was capped at the lowest speed limit; on longer corridors the planner instead chained single-lane traversals that each start and end at rest. With three 5&nbsp;m lanes limited to 1.0&nbsp;/&nbsp;0.3&nbsp;/&nbsp;1.0&nbsp;m/s, the robot stopped twice and took 31.3&nbsp;s.</p>
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Fix</h4>
-          <p class="text-gray-300">Kept each lane&apos;s own limit and built the motion profile with a forward (acceleration) and backward (deceleration) pass, so the robot slows down before the slow lane and speeds up after it without stopping: 29.6 s with no stops. Uniform-limit traversals are unchanged and there are no public API changes; a new test scenario fails on the main branch.</p>
+          <p class="text-gray-300">Kept each lane&apos;s own limit and built the motion profile with a forward (acceleration) and backward (deceleration) pass, so the robot slows down before the slow lane and speeds up after it without stopping: 29.6&nbsp;s with no stops. Uniform-limit traversals are unchanged and there are no public API changes; a new test scenario fails on the main branch.</p>
           <img src="../images/rmf_traffic_speed_profile.png" alt="Speed profile across three lanes limited to 1.0, 0.3, and 1.0 m/s: before, the robot stops twice; after, it slows down for the middle lane without stopping" class="w-full rounded-md mt-4 bg-white" loading="lazy" />
           <h4 class="text-sm font-bold text-white mt-4 mb-1">Why It Matters</h4>
           <p class="text-gray-300">Fleet traffic schedules are only as good as the trajectories they are built from. At Wing I debugged cross-operator 4D deconfliction incidents on call (InterUSS / ASTM F3548); rmf_traffic&apos;s traffic schedule and conflict checks are the same class of problem.</p>
@@ -548,7 +548,7 @@
 
         <div class="bg-gray-800 rounded-lg p-6 sm:p-8 my-8 shadow-md">
           <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="text-xl font-bold text-white">MuJoCo: Camera Intrinsics Utility</h3>
+            <h3 class="max-sm:[text-wrap:balance] text-xl font-bold text-white">MuJoCo: Camera Intrinsics Utility</h3>
             <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40">MuJoCo</span>
           </div>
           <div class="flex flex-wrap gap-2 mt-3">
