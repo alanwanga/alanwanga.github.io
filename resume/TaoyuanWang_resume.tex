@@ -13,12 +13,15 @@
 % Generation rules (self-contained: a tailored resume is generated from this file
 %   plus a JD only, so every rule lives here).
 %   - Bullet bank: every bullet is \defbullet{id}{text}; pick and order with
-%     \usebullet{id}. Hidden bullets do not appear in the PDF. The bank is
-%     add-only: never delete or rewrite a bullet; add a new id instead.
+%     \usebullet{id}. Hidden bullets do not appear in the PDF. When tailoring
+%     for a JD, add a new id rather than overwriting a shared bullet; when
+%     syncing facts/links with the portfolio, update existing ids in place so
+%     superseded versions do not linger.
 %   - Pick bullets by matching the JD against the "% tags:" line above each one.
-%     Google / Google DeepMind JDs: wing-gemini-tools; other companies:
-%     wing-llm-tools. OSS-heavy JDs: the oss-* bullets may become their own
-%     section or replace one or two Wing bullets.
+%     Default operator-tools bullet: wing-llm-tools (optional Gemini-framed
+%     alternate for Google / Google DeepMind JDs: wing-gemini-tools). OSS-heavy
+%     JDs: the oss-* bullets may become their own section or replace one or two
+%     Wing bullets.
 %   - Must compile to exactly 1 page. The page is full: every added line needs
 %     one removed. Cut order: "Three.js (WebGL)" in Robotics & ML first; the
 %     Military Service line last.
@@ -30,10 +33,10 @@
 %   - Public repo: no internal links, change/bug numbers, or internal paths
 %     anywhere in this file (comments and hidden bullets included). Only
 %     publicly verifiable or measured numbers.
-%   - Links: the Skills "Open Source" line links each project to
+%   - Links: the Skills "Open Source (C++)" line links each public project to
 %     pulls?q=author:alanwanga (all my PRs); each oss-* bullet links one PR.
 %     Context links: "UTM" in the Wing subheading -> https://www.nasa.gov/utm;
-%     "InterUSS" -> https://interussplatform.org/ (wing-llm-tools-linked).
+%     "InterUSS" -> https://interussplatform.org/.
 %   - MuJoCo counts as open source whether or not it has landed. Until it is on
 %     GitHub: generic name, no link, no unreleased API names, no wording that
 %     implies it shipped. After export: link the public commit (see TODO at
@@ -100,32 +103,28 @@
 \newcommand{\usebullet}[1]{\resumeItem{\csname bullet@#1\endcsname}}
 
 
-% ---- Wing: bullets used in the GDM Robotics backend version (see \usebullet order) ----
-% tags: robotics sim perception control
-\defbullet{wing-tangy-sim}{Independently rebuilt a multi-drone delivery PoC in MuJoCo (simulation): \textbf{Gemini Robotics-ER} perception from camera pixels with depth back-projection and Kalman tracking, plus a geometric SE(3) flight controller}
-% tags: robotics safety eval
-\defbullet{wing-tangy-eval}{Built a Simplex safety layer and evaluation benchmark: deterministic checks gate every Gemini plan; an independent 50 Hz ground-truth auditor scores runs (\textbf{0 violations} in 300 adversarial plans + 240 runs)}
-% tags: robotics safety eval llm ablation
-\defbullet{wing-tangy-eval-ablation}{Built a Simplex safety layer and evaluation benchmark: deterministic checks gate every Gemini plan; an independent 50 Hz ground-truth auditor scores runs (\textbf{0 violations} in 300 adversarial plans + 360 runs; with both safety layers off, 4/30 runs breached airspace)}
-% tags: robotics safety eval llm
-\defbullet{wing-tangy-eval-360}{Built a Simplex safety layer and evaluation benchmark: deterministic checks gate every Gemini plan; an independent 50 Hz ground-truth auditor scores runs (\textbf{0 violations} in 300 adversarial plans + 360 runs)}
-% tags: sim safety reliability
-\defbullet{wing-prober-sim}{Led end-to-end validation of a safety-critical emergency-landing command on \textbf{simulated vehicles} in pre-production, asserting state transitions against deadlines; wrote the on-call debugging playbook}
+% ---- Wing: shown in current PDF (matches \usebullet order below) ----
 % tags: autonomy hri backend
 \defbullet{wing-oversight-hri}{Main backend engineer for the human-in-the-loop supervision system behind FAA approval for a \textbf{10$\times$ increase in aircraft per operator}, shifting operators to management by exception}
 % tags: geo cpp data
 \defbullet{wing-s2-spatial}{Built C++ services for 4D (3D + time) spatial constraint checking with \textbf{S2 Geometry}; precomputed geometric joins offline in a Flume pipeline}
-% tags: llm safety hri
-\defbullet{wing-gemini-tools}{Built PoC Gemini-in-the-loop operator tools (models propose, deterministic checks + humans decide): schema-constrained 4D flight-restriction drafting and incident triage tested via time-cutoff replay}
-% tags: llm safety hri utm
-\defbullet{wing-llm-tools}{Built PoC LLM-in-the-loop operator tools (models propose, deterministic checks + humans decide): 4D flight-restriction drafting and incident triage (e.g. InterUSS deconfliction) tested via time-cutoff replay}
-% tags: llm safety hri utm
-\defbullet{wing-llm-tools-linked}{Built PoC LLM-in-the-loop operator tools (models propose, deterministic checks + humans decide): 4D flight-restriction drafting and incident triage (e.g. \href{https://interussplatform.org/}{InterUSS} deconfliction) tested via time-cutoff replay}
 % tags: backend auth data
 \defbullet{wing-rbac-license}{Led design (eng lead) of config-driven RBAC with per-RPC permission checks; owned the pilot License service and its dual-write Spanner migration without a maintenance window}
+% tags: sim safety reliability
+\defbullet{wing-prober-sim}{Led end-to-end validation of a safety-critical emergency-landing command on \textbf{simulated vehicles} in pre-production, asserting state transitions against deadlines; wrote the on-call debugging playbook}
+% tags: robotics sim perception control
+\defbullet{wing-tangy-sim}{Independently rebuilt a multi-drone delivery PoC in MuJoCo (simulation): \textbf{Gemini Robotics-ER} perception from camera pixels with depth back-projection and Kalman tracking, plus a geometric SE(3) flight controller}
+% tags: robotics safety eval llm
+\defbullet{wing-tangy-eval}{Built a Simplex safety layer and evaluation benchmark: deterministic checks gate every Gemini plan; an independent 50 Hz ground-truth auditor scores runs (\textbf{0 violations} in 300 adversarial plans + 360 runs)}
+% tags: llm safety hri utm
+\defbullet{wing-llm-tools}{Built PoC LLM-in-the-loop operator tools (models propose, deterministic checks + humans decide): 4D flight-restriction drafting and incident triage (e.g. \href{https://interussplatform.org/}{InterUSS} deconfliction) tested via time-cutoff replay}
 
 
-% ---- Wing: hidden alternates (airspace/backend framing, for other JDs) ----
+% ---- Wing: hidden alternates (swap in per JD) ----
+% tags: robotics safety eval llm ablation
+\defbullet{wing-tangy-eval-ablation}{Built a Simplex safety layer and evaluation benchmark: deterministic checks gate every Gemini plan; an independent 50 Hz ground-truth auditor scores runs (\textbf{0 violations} in 300 adversarial plans + 360 runs; with both safety layers off, 4/30 runs breached airspace)}
+% tags: llm safety hri utm
+\defbullet{wing-gemini-tools}{Built PoC Gemini-in-the-loop operator tools (models propose, deterministic checks + humans decide): schema-constrained 4D flight-restriction drafting and incident triage (e.g. \href{https://interussplatform.org/}{InterUSS} deconfliction) tested via time-cutoff replay}
 % tags: backend auth
 \defbullet{wing-rbac}{Led design (eng lead) of OpenSky user, organization, and license management; replaced legacy ACL sync with config-driven RBAC on Spanner (one keyed read + in-memory lookup per RPC) behind feature flags}
 % tags: backend autonomy
@@ -137,31 +136,7 @@
 % tags: backend data migration
 \defbullet{wing-license}{Owned the pilot License service (pre-flight license checks) and its public API; designed its dual-write Spanner migration (idempotent backfill, atomic dual writes, flag-gated read cutover) without a maintenance window}
 % tags: robotics sim
-\defbullet{wing-tangy}{Co-built a multi-drone coordination PoC; independently rebuilt it in MuJoCo with Gemini Robotics-ER pixel perception and a Simplex safety layer (0 violations in 300 adversarial plans + 240 runs; 20/20 end-to-end simulated deliveries)}
-
-
-% ---- Other experience: shown ----
-% tags: perception 3d frontend
-\defbullet{appen-3d-tools}{Led end-to-end development of ML-assisted, human-verified \textbf{3D/LiDAR} annotation tools (React/Three.js, Flask/Spring): click-to-box via DBSCAN on k-d trees, and GPU shaders + octree culling (1M to 10M+ points)}
-% tags: perception product
-\defbullet{appen-segmentation-product}{Extended cuboid annotation into 4D (3D + time) point-cloud semantic segmentation as a PoC side project, later launched as a product used by \textbf{20+ leading clients} in autonomous vehicles and robotics}
-% tags: leadership
-\defbullet{appenchina-founding}{Founding engineer at Appen China; built the localized annotation platform for the Chinese market}
-% tags: perception sensor-fusion
-\defbullet{appenchina-perception}{Prototyped 3D point-cloud object detection/tracking for pre-labeling and NumPy LiDAR-to-camera projection from device calibration intrinsics/extrinsics to support multi-sensor fusion annotation}
-% tags: data impact
-\defbullet{appenchina-analytics}{Built annotator event logging and workflow analytics with UX designers and data scientists, driving training and tooling improvements that reduced labeling costs by \textbf{56\%}}
-% tags: fullstack ml
-\defbullet{works-erp}{Built full-stack enterprise ERP features (Vue.js frontend, Spring/Hibernate backend) and prototyped a transformer-based chatbot and LSTM-based OCR (Tesseract) for workflow automation}
-% tags: fullstack ml
-\defbullet{works-erp-short}{Built full-stack ERP features (Vue.js, Spring/Hibernate); prototyped a transformer chatbot and LSTM-based OCR}
-% tags: nlp research
-\defbullet{sinica-dialogue}{Researched conversational agents for Chinese short text and maintained a large Weibo post--comment dataset}
-% tags: ml rl research
-\defbullet{sinica-rl}{Implemented Seq2Seq with attention in PyTorch, fine-tuned with \textbf{reinforcement learning} using human-rated comment appropriateness scores as rewards (an early RLHF-style setup)}
-
-
-% ---- Hidden alternates (verified, public-safe; swap in per JD) ----
+\defbullet{wing-tangy}{Co-built a multi-drone coordination PoC; independently rebuilt it in MuJoCo with Gemini Robotics-ER pixel perception and a Simplex safety layer (0 violations in 300 adversarial plans + 360 runs; 20/20 end-to-end simulated missions)}
 % tags: backend api reliability
 \defbullet{wing-public-apis}{Built public Licenses and Flights APIs (service definitions, CRUD handlers, schema changes, functional tests); authored and executed a phased, metrics-gated turndown of a legacy public API}
 % tags: backend rollout
@@ -175,7 +150,7 @@
 % tags: robotics perception sim
 \defbullet{wing-tangy-perception}{Built perception from pixels in simulation: Gemini Robotics-ER points at objects in RGB-D frames, back-projected with depth and tracked with a Kalman filter and Hungarian association (recall 0.80--0.82 at precision 0.95--0.96)}
 % tags: robotics perception llm vlm eval
-\defbullet{wing-tangy-er-vs-flash}{Benchmarked robotics VLM vs.\ general-purpose Gemini Flash on identical simulated frames: Gemini Robotics-ER outperformed Flash on five-class detection (recall/precision 0.80/0.95 vs.\ 0.60/0.77) with zero frame-budget timeouts (0 vs.\ 6/24)}
+\defbullet{wing-tangy-er-vs-flash}{Benchmarked robotics VLM vs.\ general-purpose Gemini Flash on identical simulated frames: Gemini Robotics-ER outperformed Flash on five-class detection (recall 0.80--0.82 vs.\ 0.60, precision 0.95--0.96 vs.\ 0.77) with zero frame-budget timeouts (0/24 vs.\ 6/24)}
 % tags: robotics safety eval ablation
 \defbullet{wing-tangy-simplex-ablation}{Ablated the safety layers under live Gemini planning: 0/30 violations with all layers on; with the plan validator off the onboard monitor braked every unsafe flight; with both off, 4/30 runs entered a no-fly zone or left the geofence}
 % tags: robotics eval sim robustness
@@ -190,12 +165,36 @@
 \defbullet{wing-tangy-results}{In MuJoCo simulation, delivered 20/20 end-to-end Gemini-planned missions to the right target; on a 10-task suite (3 runs each), planning went from 12/30 to 30/30 once the planner saw the scene (annotated scout image, own drones masked, targets described by color)}
 % tags: robotics sim data
 \defbullet{wing-tangy-tooling}{In the original co-built PoC, text descriptions generated custom 3D test scenes, and commands, reasoning, actions, and feedback were logged as episodes for a reinforcement-learning dataset}
+
+
+% ---- Other experience: shown in current PDF ----
+% tags: perception 3d frontend
+\defbullet{appen-3d-tools}{Led end-to-end development of ML-assisted, human-verified \textbf{3D/LiDAR} annotation tools (React/Three.js, Flask/Spring): click-to-box via DBSCAN on k-d trees, and GPU shaders + octree culling (1M to 10M+ points)}
+% tags: perception product
+\defbullet{appen-segmentation-product}{Extended cuboid annotation into 4D (3D + time) point-cloud semantic segmentation as a PoC side project, later launched as a product used by \textbf{20+ leading clients} in autonomous vehicles and robotics}
+% tags: leadership
+\defbullet{appenchina-founding}{Founding engineer at Appen China; built the localized annotation platform for the Chinese market}
+% tags: perception sensor-fusion
+\defbullet{appenchina-perception}{Prototyped 3D point-cloud object detection/tracking for pre-labeling and NumPy LiDAR-to-camera projection from device calibration intrinsics/extrinsics to support multi-sensor fusion annotation}
+% tags: data impact
+\defbullet{appenchina-analytics}{Built annotator event logging and workflow analytics with UX designers and data scientists, driving training and tooling improvements that reduced labeling costs by \textbf{56\%}}
+% tags: fullstack ml
+\defbullet{works-erp-short}{Built full-stack ERP features (Vue.js, Spring/Hibernate); prototyped a transformer chatbot and LSTM-based OCR}
+% tags: nlp research
+\defbullet{sinica-dialogue}{Researched conversational agents for Chinese short text and maintained a large Weibo post--comment dataset}
+% tags: ml rl research
+\defbullet{sinica-rl}{Implemented Seq2Seq with attention in PyTorch, fine-tuned with \textbf{reinforcement learning} using human-rated comment appropriateness scores as rewards (an early RLHF-style setup)}
+
+
+% ---- Other experience: hidden alternates (swap in per JD) ----
+% tags: perception 3d impact
+\defbullet{appen-oneclick-speed}{Built click-to-annotate 3D bounding boxes via DBSCAN on k-d trees, achieving \textbf{35\% faster per-object annotation} in a same-frame A/B test}
 % tags: perception data tooling
 \defbullet{appen-telemetry}{Built annotator-telemetry dashboards giving operations teams visibility into worker bottlenecks}
 % tags: perception sensor-fusion
 \defbullet{appen-fusion}{Ran sensor fusion experiments: real-time projection of 3D LiDAR points into 2D camera views and multi-sensor (LiDAR, radar, camera) fusion to support annotation accuracy}
-% tags: perception ml frontend
-\defbullet{appen-segmentation}{Built point-level semantic segmentation with real-time AI-assisted interaction}
+% tags: fullstack ml
+\defbullet{works-erp}{Built full-stack enterprise ERP features (Vue.js frontend, Spring/Hibernate backend) and prototyped a transformer-based chatbot and LSTM-based OCR (Tesseract) for workflow automation}
 
 
 % ---- Open source (hidden; see generation rules) ----
@@ -217,7 +216,7 @@
     \textbf{\Huge \scshape Taoyuan Wang} \\ \vspace{1pt}
     \small +1-669-609-3436 $|$ \href{mailto:alanwanga@gmail.com}{alanwanga@gmail.com} $|$
     \href{https://www.linkedin.com/in/taoyuanwang}{linkedin.com/in/taoyuanwang} $|$
-    \href{https://alanwanga.github.io/portfolio}{alanwanga.github.io/portfolio} $|$ SF Bay Area
+    \href{https://alanwanga.github.io/portfolio/}{alanwanga.github.io/portfolio} $|$ SF Bay Area
 \end{center}
 \section{Experience}
   \resumeSubHeadingListStart
@@ -228,8 +227,8 @@
         \usebullet{wing-rbac-license}
         \usebullet{wing-prober-sim}
         \usebullet{wing-tangy-sim}
-        \usebullet{wing-tangy-eval-360}
-        \usebullet{wing-llm-tools-linked}
+        \usebullet{wing-tangy-eval}
+        \usebullet{wing-llm-tools}
       \resumeItemListEnd
     \resumeSubheading{Software Engineer at Appen (fka Figure Eight)}{Oct 2021 -- Oct 2022}{Computer Vision Tools Team (Internal transfer from China)}{Sunnyvale, CA}
       \resumeItemListStart
@@ -266,7 +265,9 @@
      \textbf{Backend \& Data}: gRPC, Protocol Buffers, Spanner, Flume, Docker, GCP, AWS, Flask, Spring \\
      \textbf{Robotics \& ML}: MuJoCo, ROS 2, Gemini Robotics-ER (VLM), LLM Evaluation \& Guardrails, PyTorch, NumPy, S2 Geometry, Three.js (WebGL) \\
      \textbf{Tools \& Certification}: pytest, JUnit, Jest, Git, CMake, Jenkins, Google Antigravity; Google C++ Readability \\
-     % Open Source line alternates (keep; swap in when the layout allows):
+     % Open Source line alternates (keep; swap in when the layout allows).
+     %   They keep the shorter "Open Source" label on purpose: with "(C++)" the
+     %   three-project lines wrap to a second line and the PDF becomes 2 pages.
      %   Long, three projects (needs one more line than the page has):
      %   \textbf{Open Source}: \href{https://github.com/gazebosim/gz-physics/pulls?q=author:alanwanga}{Gazebo gz-physics} (C++ MuJoCo plugin), \href{https://github.com/gazebosim/ros_gz/pulls?q=author:alanwanga}{Gazebo ros\_gz} (ROS 2), \href{https://github.com/open-rmf/rmf_traffic/pulls?q=author:alanwanga}{Open-RMF rmf\_traffic} (trajectory planning)
      %   Short, three projects without MuJoCo (verified 1 page):
